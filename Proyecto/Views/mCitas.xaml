@@ -1,0 +1,77 @@
+﻿<navigation:Page 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="Proyecto.Views.mCitas"
+           mc:Ignorable="d"
+           d:DesignWidth="1200" d:DesignHeight="700"
+           Title="Citas">
+    <Grid x:Name="LayoutRoot">
+
+        <StackPanel HorizontalAlignment="Left" Height="355" Margin="670,40,0,0" VerticalAlignment="Top" Width="490" Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Left" Height="355" VerticalAlignment="Top" Width="100">
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Identificador:"  Visibility="Collapsed"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Sede:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Paciente:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Médico:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Hora:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Fecha:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Estado:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Factura:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Observaciones:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,25"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="355" VerticalAlignment="Top" Width="380">
+                <TextBox x:Name="TB_IDCita" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" MaxLength="20" IsReadOnly="True" Visibility="Collapsed"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <ComboBox x:Name="CB_Sede" HorizontalAlignment="Left" VerticalAlignment="Top" Width="380" Height="25" SelectionChanged="CB_Sede_ItemChanged"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <ComboBox x:Name="CB_Pacientes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="380" Height="25"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <ComboBox x:Name="CB_Medicos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="380" Height="25" SelectionChanged="CB_Medicos_ItemChanged"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <ComboBox x:Name="CB_Horarios" HorizontalAlignment="Left" VerticalAlignment="Top" Width="380" Height="25"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:DatePicker x:Name="DP_Fecha" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="380" SelectedDateFormat="Long" SelectedDateChanged="DP_Fecha_ItemChanged"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <ComboBox x:Name="CB_Tipo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="380" Height="25" SelectionChanged="CB_Tipo_ItemChanged"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <TextBox x:Name="TB_IDFactura" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" MaxLength="20"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <TextBox x:Name="TB_Observaciones" HorizontalAlignment="Left" Height="75" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" MaxLength="200"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Height="95" Margin="40,276,0,0" VerticalAlignment="Top" Width="360" Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
+                <Button x:Name="BN_Insertar" Content="Insertar nueva cita" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_Insertar_Click"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Button x:Name="BN_Actualizar" Content="Actualizar cita" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_Actualizar_Click"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Button x:Name="BN_Borrar" Content="Borrar cita" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_Borrar_Click"/>
+            </StackPanel>
+            <Rectangle Style="{StaticResource DividerStyle}" Margin="5,5"/>
+            <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,17.5"/>
+                <ComboBox x:Name="CB_ID_Update" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <ComboBox x:Name="CB_ID_Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+            </StackPanel>
+
+        </StackPanel>
+
+        <sdk:DataGrid HorizontalAlignment="Left" Height="200" Margin="40,460,0,0" VerticalAlignment="Top" Width="1110" Name="DG_Citas" AutoGenerateColumns="True" IsReadOnly="True"/>
+        <sdk:Label x:Name="label" HorizontalAlignment="Left" Height="130" Margin="40,40,0,530" VerticalAlignment="Center" Width="440" FontSize="36" Content="Mantenimiento de citas"/>
+
+    </Grid>
+</navigation:Page>

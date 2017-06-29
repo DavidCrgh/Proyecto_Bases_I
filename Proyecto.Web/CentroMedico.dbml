@@ -1,0 +1,609 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Proyecto" EntityNamespace="enCentroMedico" ContextNamespace="cnCentroMedico" Class="dcCentroMedico" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SQLMASTER\SQLMASTER;Initial Catalog=Proyecto;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ProyectoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="CITA.CITA" Member="CITAs">
+    <Type Name="CITA">
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="MEDICO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ESPECIALIDAD" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DIACITA" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="HORACITA" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHACITA" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IDFACTURA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Association Name="CITA_ORDENINTERNAMIENTO" Member="ORDENINTERNAMIENTOs" ThisKey="IDCITA" OtherKey="IDCITA" Type="ORDENINTERNAMIENTO" />
+      <Association Name="CITA_REFERENCIA" Member="REFERENCIAs" ThisKey="IDCITA" OtherKey="IDCITA" Type="REFERENCIA" />
+      <Association Name="CITA_SEGUIMIENTO" Member="SEGUIMIENTOs" ThisKey="IDCITA" OtherKey="IDCITA" Type="SEGUIMIENTO" />
+      <Association Name="CITA_SOLICITUDEXAMEN" Member="SOLICITUDEXAMENs" ThisKey="IDCITA" OtherKey="IDCITA" Type="SOLICITUDEXAMEN" />
+      <Association Name="CITA_RECETA" Member="RECETAs" ThisKey="IDCITA" OtherKey="IDCITA" Type="RECETA" />
+      <Association Name="HORARIO_CITA" Member="HORARIO" ThisKey="DIACITA,HORACITA,MEDICO,SEDE" OtherKey="DIA,HORA,IDEMPLEADO,IDSEDE" Type="HORARIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="MEDICOESPECIALIDAD_CITA" Member="MEDICOESPECIALIDAD" ThisKey="MEDICO,SEDE,ESPECIALIDAD" OtherKey="IDMEDICO,IDSEDE,IDESPECIALIDAD" Type="MEDICOESPECIALIDAD" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="FACTURA_CITA" Member="FACTURA" ThisKey="IDFACTURA" OtherKey="IDFACTURA" Type="FACTURA" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="PACIENTE_CITA" Member="PACIENTE" ThisKey="CEDULAPACIENTE" OtherKey="CEDULA" Type="PACIENTE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="CITA.CITA_HISTORICO" Member="CITA_HISTORICOs">
+    <Type Name="CITA_HISTORICO">
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="SEDE" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="MEDICO" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+      <Column Name="ESPECIALIDAD" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="DIACITA" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="HORACITA" Type="System.Decimal" DbType="Decimal(2,0)" CanBeNull="true" />
+      <Column Name="FECHACITA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ESTADO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IDFACTURA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="CITA.ORDENINTERNAMIENTO" Member="ORDENINTERNAMIENTOs">
+    <Type Name="ORDENINTERNAMIENTO">
+      <Column Name="IDORDEN" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="MOTIVO" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Association Name="CITA_ORDENINTERNAMIENTO" Member="CITA" ThisKey="IDCITA" OtherKey="IDCITA" Type="CITA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="SEDE_ORDENINTERNAMIENTO" Member="SEDE1" ThisKey="SEDE" OtherKey="IDSEDE" Type="SEDE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="CITA.ORDENINTERNAMIENTO_HISTORICO" Member="ORDENINTERNAMIENTO_HISTORICOs">
+    <Type Name="ORDENINTERNAMIENTO_HISTORICO">
+      <Column Name="IDORDEN" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="SEDE" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="MOTIVO" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="CITA.REFERENCIA" Member="REFERENCIAs">
+    <Type Name="REFERENCIA">
+      <Column Name="IDREFERENCIA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDESPECIALIDAD" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="COMENTARIOS" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Association Name="CITA_REFERENCIA" Member="CITA" ThisKey="IDCITA" OtherKey="IDCITA" Type="CITA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="ESPECIALIDAD_REFERENCIA" Member="ESPECIALIDAD" ThisKey="IDESPECIALIDAD" OtherKey="IDESPECIALIDAD" Type="ESPECIALIDAD" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="CITA.REFERENCIA_HISTORICO" Member="REFERENCIA_HISTORICOs">
+    <Type Name="REFERENCIA_HISTORICO">
+      <Column Name="IDREFERENCIA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="IDESPECIALIDAD" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+      <Column Name="COMENTARIOS" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="CITA.SEGUIMIENTO" Member="SEGUIMIENTOs">
+    <Type Name="SEGUIMIENTO">
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDCITAANTERIOR" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MOTIVO" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Association Name="CITA_SEGUIMIENTO" Member="CITA" ThisKey="IDCITA" OtherKey="IDCITA" Type="CITA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="CITA.SEGUIMIENTO_HISTORICO" Member="SEGUIMIENTO_HISTORICOs">
+    <Type Name="SEGUIMIENTO_HISTORICO">
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="IDCITAANTERIOR" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="MOTIVO" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EMPLEADO.EMPLEADO" Member="EMPLEADOs">
+    <Type Name="EMPLEADO">
+      <Column Name="IDEMPLEADO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDPUESTO" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDOS" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="RESIDENCIA" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="FOTOGRAFIA" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Association Name="EMPLEADO_EMPLEADOSEDE" Member="EMPLEADOSEDEs" ThisKey="IDEMPLEADO" OtherKey="IDEMPLEADO" Type="EMPLEADOSEDE" />
+      <Association Name="PUESTO_EMPLEADO" Member="PUESTO" ThisKey="IDPUESTO" OtherKey="IDPUESTO" Type="PUESTO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EMPLEADO.EMPLEADO_BITACORA" Member="EMPLEADO_BITACORAs">
+    <Type Name="EMPLEADO_BITACORA">
+      <Column Name="IDEMPLEADO" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+      <Column Name="IDPUESTO" Type="System.Decimal" DbType="Decimal(2,0)" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="APELLIDOS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="RESIDENCIA" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="FOTOGRAFIA" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+      <Column Name="USUARIO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FECHAMODFICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TIPOMODFIFICACION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EMPLEADO.EMPLEADOSEDE" Member="EMPLEADOSEDEs">
+    <Type Name="EMPLEADOSEDE">
+      <Column Name="IDEMPLEADO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VIGENCIAFECHAINIC" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="VIGENCIAFECHAFINA" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="EMPLEADOSEDE_ENCARGADOLAB" Member="ENCARGADOLABs" ThisKey="IDEMPLEADO,IDSEDE" OtherKey="IDEMPLEADO,IDSEDE" Type="ENCARGADOLAB" />
+      <Association Name="EMPLEADOSEDE_ENCARGADOFARMACIA" Member="ENCARGADOFARMACIAs" ThisKey="IDEMPLEADO,IDSEDE" OtherKey="IDEMPLEADO,IDSEDE" Type="ENCARGADOFARMACIA" />
+      <Association Name="EMPLEADOSEDE_MEDICOESPECIALIDAD" Member="MEDICOESPECIALIDADs" ThisKey="IDEMPLEADO,IDSEDE" OtherKey="IDMEDICO,IDSEDE" Type="MEDICOESPECIALIDAD" />
+      <Association Name="EMPLEADO_EMPLEADOSEDE" Member="EMPLEADO" ThisKey="IDEMPLEADO" OtherKey="IDEMPLEADO" Type="EMPLEADO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EMPLEADO.ENCARGADOLAB" Member="ENCARGADOLABs">
+    <Type Name="ENCARGADOLAB">
+      <Column Name="IDEMPLEADO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDLABORATORIO" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="EMPLEADOSEDE_ENCARGADOLAB" Member="EMPLEADOSEDE" ThisKey="IDEMPLEADO,IDSEDE" OtherKey="IDEMPLEADO,IDSEDE" Type="EMPLEADOSEDE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="LABORATORIO_ENCARGADOLAB" Member="LABORATORIO" ThisKey="IDLABORATORIO" OtherKey="IDLABORATORIO" Type="LABORATORIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EMPLEADO.ENCARGADOFARMACIA" Member="ENCARGADOFARMACIAs">
+    <Type Name="ENCARGADOFARMACIA">
+      <Column Name="IDEMPLEADO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDFARMACIA" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="EMPLEADOSEDE_ENCARGADOFARMACIA" Member="EMPLEADOSEDE" ThisKey="IDEMPLEADO,IDSEDE" OtherKey="IDEMPLEADO,IDSEDE" Type="EMPLEADOSEDE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="FARMACIA_ENCARGADOFARMACIA" Member="FARMACIA" ThisKey="IDFARMACIA,IDSEDE" OtherKey="IDFARMACIA,IDSEDE" Type="FARMACIA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EMPLEADO.ESPECIALIDAD" Member="ESPECIALIDADs">
+    <Type Name="ESPECIALIDAD">
+      <Column Name="IDESPECIALIDAD" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Association Name="ESPECIALIDAD_REFERENCIA" Member="REFERENCIAs" ThisKey="IDESPECIALIDAD" OtherKey="IDESPECIALIDAD" Type="REFERENCIA" />
+    </Type>
+  </Table>
+  <Table Name="EMPLEADO.HORARIO" Member="HORARIOs">
+    <Type Name="HORARIO">
+      <Column Name="IDEMPLEADO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DIA" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HORA" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="HORARIO_CITA" Member="CITAs" ThisKey="DIA,HORA,IDEMPLEADO,IDSEDE" OtherKey="DIACITA,HORACITA,MEDICO,SEDE" Type="CITA" />
+    </Type>
+  </Table>
+  <Table Name="EMPLEADO.MEDICOESPECIALIDAD" Member="MEDICOESPECIALIDADs">
+    <Type Name="MEDICOESPECIALIDAD">
+      <Column Name="IDMEDICO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDESPECIALIDAD" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRECIOCITA" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Association Name="MEDICOESPECIALIDAD_CITA" Member="CITAs" ThisKey="IDMEDICO,IDSEDE,IDESPECIALIDAD" OtherKey="MEDICO,SEDE,ESPECIALIDAD" Type="CITA" />
+      <Association Name="EMPLEADOSEDE_MEDICOESPECIALIDAD" Member="EMPLEADOSEDE" ThisKey="IDMEDICO,IDSEDE" OtherKey="IDEMPLEADO,IDSEDE" Type="EMPLEADOSEDE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="EMPLEADO.PUESTO" Member="PUESTOs">
+    <Type Name="PUESTO">
+      <Column Name="IDPUESTO" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DESRIPCION" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Association Name="PUESTO_EMPLEADO" Member="EMPLEADOs" ThisKey="IDPUESTO" OtherKey="IDPUESTO" Type="EMPLEADO" />
+    </Type>
+  </Table>
+  <Table Name="FACTURA.FACTURA" Member="FACTURAs">
+    <Type Name="FACTURA">
+      <Column Name="IDFACTURA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FECHAFACTURA" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Association Name="FACTURA_CITA" Member="CITAs" ThisKey="IDFACTURA" OtherKey="IDFACTURA" Type="CITA" />
+    </Type>
+  </Table>
+  <Table Name="FACTURA.FACTURA_HISTORICO" Member="FACTURA_HISTORICOs">
+    <Type Name="FACTURA_HISTORICO">
+      <Column Name="IDFACTURA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="FECHAFACTURA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="FARMACIA.FARMACIA" Member="FARMACIAs">
+    <Type Name="FARMACIA">
+      <Column Name="IDFARMACIA" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="FARMACIA_ENCARGADOFARMACIA" Member="ENCARGADOFARMACIAs" ThisKey="IDFARMACIA,IDSEDE" OtherKey="IDFARMACIA,IDSEDE" Type="ENCARGADOFARMACIA" />
+      <Association Name="FARMACIA_MEDICAMENTOFARMACIA" Member="MEDICAMENTOFARMACIAs" ThisKey="IDFARMACIA,IDSEDE" OtherKey="IDFARMACIA,IDSEDE" Type="MEDICAMENTOFARMACIA" />
+      <Association Name="SEDE_FARMACIA" Member="SEDE" ThisKey="IDSEDE" OtherKey="IDSEDE" Type="SEDE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="FARMACIA.MEDICAMENTO" Member="MEDICAMENTOs">
+    <Type Name="MEDICAMENTO">
+      <Column Name="IDMEDICAMENTO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Association Name="MEDICAMENTO_MEDICAMENTOFARMACIA" Member="MEDICAMENTOFARMACIAs" ThisKey="IDMEDICAMENTO" OtherKey="IDMEDICAMENTO" Type="MEDICAMENTOFARMACIA" />
+    </Type>
+  </Table>
+  <Table Name="FARMACIA.MEDICAMENTOFARMACIA" Member="MEDICAMENTOFARMACIAs">
+    <Type Name="MEDICAMENTOFARMACIA">
+      <Column Name="IDMEDICAMENTO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDFARMACIA" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PRECIO" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Association Name="MEDICAMENTOFARMACIA_LINEARECETA" Member="LINEARECETAs" ThisKey="IDMEDICAMENTO,IDFARMACIA,IDSEDE" OtherKey="IDMEDICAMENTO,IDFARMACIA,IDSEDE" Type="LINEARECETA" />
+      <Association Name="FARMACIA_MEDICAMENTOFARMACIA" Member="FARMACIA" ThisKey="IDFARMACIA,IDSEDE" OtherKey="IDFARMACIA,IDSEDE" Type="FARMACIA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="MEDICAMENTO_MEDICAMENTOFARMACIA" Member="MEDICAMENTO" ThisKey="IDMEDICAMENTO" OtherKey="IDMEDICAMENTO" Type="MEDICAMENTO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="LABORATORIO.EXAMEN" Member="EXAMENs">
+    <Type Name="EXAMEN">
+      <Column Name="IDEXAMEN" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DESCRIPCION" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Association Name="EXAMEN_EXAMENLABORATORIO" Member="EXAMENLABORATORIOs" ThisKey="IDEXAMEN" OtherKey="IDEXAMEN" Type="EXAMENLABORATORIO" />
+    </Type>
+  </Table>
+  <Table Name="LABORATORIO.EXAMENLABORATORIO" Member="EXAMENLABORATORIOs">
+    <Type Name="EXAMENLABORATORIO">
+      <Column Name="IDEXAMEN" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDLABORATORIO" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="COSTOHONORARIO" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="COSTOEQUIPO" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Association Name="EXAMENLABORATORIO_SOLICITUDEXAMEN" Member="SOLICITUDEXAMENs" ThisKey="IDEXAMEN,IDLABORATORIO" OtherKey="IDEXAMEN,IDLABORATORIO" Type="SOLICITUDEXAMEN" />
+      <Association Name="EXAMEN_EXAMENLABORATORIO" Member="EXAMEN" ThisKey="IDEXAMEN" OtherKey="IDEXAMEN" Type="EXAMEN" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="LABORATORIO_EXAMENLABORATORIO" Member="LABORATORIO" ThisKey="IDLABORATORIO" OtherKey="IDLABORATORIO" Type="LABORATORIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="LABORATORIO.ITEM" Member="ITEMs">
+    <Type Name="ITEM">
+      <Column Name="IDEXAMEN" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDITEM" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EXPRESIONREGULAR" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Association Name="ITEM_ITEMSOLICITUD" Member="ITEMSOLICITUDs" ThisKey="IDEXAMEN,IDITEM" OtherKey="EXAMEN,ITEM" Type="ITEMSOLICITUD" />
+    </Type>
+  </Table>
+  <Table Name="LABORATORIO.ITEMSOLICITUD" Member="ITEMSOLICITUDs">
+    <Type Name="ITEMSOLICITUD">
+      <Column Name="EXAMEN" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ITEM" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSOLICITUD" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RESULTADO" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Association Name="ITEM_ITEMSOLICITUD" Member="ITEM1" ThisKey="EXAMEN,ITEM" OtherKey="IDEXAMEN,IDITEM" Type="ITEM" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="SOLICITUDEXAMEN_ITEMSOLICITUD" Member="SOLICITUDEXAMEN" ThisKey="IDSOLICITUD" OtherKey="IDSOLICITUD" Type="SOLICITUDEXAMEN" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="LABORATORIO.ITEMSOLICITUD_HISTORICO" Member="ITEMSOLICITUD_HISTORICOs">
+    <Type Name="ITEMSOLICITUD_HISTORICO">
+      <Column Name="EXAMEN" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="ITEM" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="IDSOLICITUD" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="RESULTADO" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="LABORATORIO.LABORATORIO" Member="LABORATORIOs">
+    <Type Name="LABORATORIO">
+      <Column Name="IDLABORATORIO" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Association Name="LABORATORIO_ENCARGADOLAB" Member="ENCARGADOLABs" ThisKey="IDLABORATORIO" OtherKey="IDLABORATORIO" Type="ENCARGADOLAB" />
+      <Association Name="LABORATORIO_EXAMENLABORATORIO" Member="EXAMENLABORATORIOs" ThisKey="IDLABORATORIO" OtherKey="IDLABORATORIO" Type="EXAMENLABORATORIO" />
+      <Association Name="TIPOLABORATORIO_LABORATORIO" Member="TIPOLABORATORIO" ThisKey="TIPO" OtherKey="IDTIPO" Type="TIPOLABORATORIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="SEDE_LABORATORIO" Member="SEDE" ThisKey="IDSEDE" OtherKey="IDSEDE" Type="SEDE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="LABORATORIO.SOLICITUDEXAMEN" Member="SOLICITUDEXAMENs">
+    <Type Name="SOLICITUDEXAMEN">
+      <Column Name="IDSOLICITUD" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDLABORATORIO" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDEXAMEN" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FCHSOLICITUD" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FCHAPLICACION" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FCHRESULTADO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(99)" CanBeNull="true" />
+      <Column Name="IDFACTURA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+      <Association Name="SOLICITUDEXAMEN_ITEMSOLICITUD" Member="ITEMSOLICITUDs" ThisKey="IDSOLICITUD" OtherKey="IDSOLICITUD" Type="ITEMSOLICITUD" />
+      <Association Name="CITA_SOLICITUDEXAMEN" Member="CITA" ThisKey="IDCITA" OtherKey="IDCITA" Type="CITA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="EXAMENLABORATORIO_SOLICITUDEXAMEN" Member="EXAMENLABORATORIO" ThisKey="IDEXAMEN,IDLABORATORIO" OtherKey="IDEXAMEN,IDLABORATORIO" Type="EXAMENLABORATORIO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="LABORATORIO.SOLICITUDEXAMEN_HISTORICO" Member="SOLICITUDEXAMEN_HISTORICOs">
+    <Type Name="SOLICITUDEXAMEN_HISTORICO">
+      <Column Name="IDSOLICITUD" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="IDLABORATORIO" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="IDEXAMEN" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="FCHSOLICITUD" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FCHAPLICACION" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FCHRESULTADO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(99)" CanBeNull="true" />
+      <Column Name="IDFACTURA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="LABORATORIO.TIPOLABORATORIO" Member="TIPOLABORATORIOs">
+    <Type Name="TIPOLABORATORIO">
+      <Column Name="IDTIPO" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="TIPOLABORATORIO_LABORATORIO" Member="LABORATORIOs" ThisKey="IDTIPO" OtherKey="TIPO" Type="LABORATORIO" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.ANTECEDENTE" Member="ANTECEDENTEs">
+    <Type Name="ANTECEDENTE">
+      <Column Name="IDANTECEDENTE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Association Name="ANTECEDENTE_ANTECEDENTEPACIENTE" Member="ANTECEDENTEPACIENTEs" ThisKey="IDANTECEDENTE" OtherKey="IDANTECEDENTE" Type="ANTECEDENTEPACIENTE" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.ANTECEDENTEPACIENTE" Member="ANTECEDENTEPACIENTEs">
+    <Type Name="ANTECEDENTEPACIENTE">
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDANTECEDENTE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Association Name="ANTECEDENTE_ANTECEDENTEPACIENTE" Member="ANTECEDENTE" ThisKey="IDANTECEDENTE" OtherKey="IDANTECEDENTE" Type="ANTECEDENTE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PACIENTE_ANTECEDENTEPACIENTE" Member="PACIENTE" ThisKey="CEDULAPACIENTE" OtherKey="CEDULA" Type="PACIENTE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.ANTECEDENTEPACIENTE_HISTORICO" Member="ANTECEDENTEPACIENTE_HISTORICOs">
+    <Type Name="ANTECEDENTEPACIENTE_HISTORICO">
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="IDANTECEDENTE" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="OBSERVACION" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.CONTACTORESPONSABLE" Member="CONTACTORESPONSABLEs">
+    <Type Name="CONTACTORESPONSABLE">
+      <Column Name="PACIENTEMENOR" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TIPO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="PACIENTE_CONTACTORESPONSABLE" Member="PACIENTE" ThisKey="PACIENTEMENOR" OtherKey="CEDULA" Type="PACIENTE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.CONTACTORESPONSABLE_HISTORICO" Member="CONTACTORESPONSABLE_HISTORICOs">
+    <Type Name="CONTACTORESPONSABLE_HISTORICO">
+      <Column Name="PACIENTEMENOR" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="RESPONSABLE" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="TIPO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.PACIENTE" Member="PACIENTEs">
+    <Type Name="PACIENTE">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FCHNACIMIENTO" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADOCIVIL" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="OCUPACION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FOTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TIPO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="PACIENTE_CITA" Member="CITAs" ThisKey="CEDULA" OtherKey="CEDULAPACIENTE" Type="CITA" />
+      <Association Name="PACIENTE_ANTECEDENTEPACIENTE" Member="ANTECEDENTEPACIENTEs" ThisKey="CEDULA" OtherKey="CEDULAPACIENTE" Type="ANTECEDENTEPACIENTE" />
+      <Association Name="PACIENTE_CONTACTORESPONSABLE" Member="CONTACTORESPONSABLEs" ThisKey="CEDULA" OtherKey="PACIENTEMENOR" Type="CONTACTORESPONSABLE" />
+      <Association Name="PACIENTE_PACIENTETELEFONO" Member="PACIENTETELEFONOs" ThisKey="CEDULA" OtherKey="CEDULAPACIENTE" Type="PACIENTETELEFONO" />
+      <Association Name="PACIENTE_VALORACIONEMERGENCIA" Member="VALORACIONEMERGENCIAs" ThisKey="CEDULA" OtherKey="CEDULAPACIENTE" Type="VALORACIONEMERGENCIA" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.PACIENTE_BITACORA" Member="PACIENTE_BITACORAs">
+    <Type Name="PACIENTE_BITACORA">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FCHNACIMIENTO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ESTADOCIVIL" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="OCUPACION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FOTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIPO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="USUARIO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FECHAMODFICACION" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TIPOMODFIFICACION" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.PACIENTE_HISTORICO" Member="PACIENTE_HISTORICOs">
+    <Type Name="PACIENTE_HISTORICO">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FCHNACIMIENTO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ESTADOCIVIL" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="OCUPACION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="FOTO" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIPO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.PACIENTETELEFONO" Member="PACIENTETELEFONOs">
+    <Type Name="PACIENTETELEFONO">
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TELEFONO" Type="System.Decimal" DbType="Decimal(8,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="PACIENTE_PACIENTETELEFONO" Member="PACIENTE" ThisKey="CEDULAPACIENTE" OtherKey="CEDULA" Type="PACIENTE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.PACIENTETELEFONO_HISTORICO" Member="PACIENTETELEFONO_HISTORICOs">
+    <Type Name="PACIENTETELEFONO_HISTORICO">
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="TELEFONO" Type="System.Decimal" DbType="Decimal(8,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.SIGNOVITALVALORACION" Member="SIGNOVITALVALORACIONs">
+    <Type Name="SIGNOVITALVALORACION">
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TIPOSIGNOVITAL" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RESULTADO" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="VALORACIONEMERGENCIA_SIGNOVITALVALORACION" Member="VALORACIONEMERGENCIA" ThisKey="CEDULAPACIENTE,FECHA" OtherKey="CEDULAPACIENTE,FECHA" Type="VALORACIONEMERGENCIA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.SIGNOVITALVALORACION_HISTORICO" Member="SIGNOVITALVALORACION_HISTORICOs">
+    <Type Name="SIGNOVITALVALORACION_HISTORICO">
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TIPOSIGNOVITAL" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="RESULTADO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.VALORACIONEMERGENCIA" Member="VALORACIONEMERGENCIAs">
+    <Type Name="VALORACIONEMERGENCIA">
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="VALORACIONEMERGENCIA_SIGNOVITALVALORACION" Member="SIGNOVITALVALORACIONs" ThisKey="CEDULAPACIENTE,FECHA" OtherKey="CEDULAPACIENTE,FECHA" Type="SIGNOVITALVALORACION" />
+      <Association Name="PACIENTE_VALORACIONEMERGENCIA" Member="PACIENTE" ThisKey="CEDULAPACIENTE" OtherKey="CEDULA" Type="PACIENTE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="PACIENTE.VALORACIONEMERGENCIA_HISTORICO" Member="VALORACIONEMERGENCIA_HISTORICOs">
+    <Type Name="VALORACIONEMERGENCIA_HISTORICO">
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="RECETA.LINEARECETA" Member="LINEARECETAs">
+    <Type Name="LINEARECETA">
+      <Column Name="IDRECETA" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDLINEA" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDMEDICAMENTO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDFARMACIA" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CANTIDAD" Type="System.Decimal" DbType="Decimal(3,0) NOT NULL" CanBeNull="false" />
+      <Column Name="INSTRUCCIONES" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Association Name="MEDICAMENTOFARMACIA_LINEARECETA" Member="MEDICAMENTOFARMACIA" ThisKey="IDMEDICAMENTO,IDFARMACIA,IDSEDE" OtherKey="IDMEDICAMENTO,IDFARMACIA,IDSEDE" Type="MEDICAMENTOFARMACIA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="RECETA_LINEARECETA" Member="RECETA" ThisKey="IDRECETA" OtherKey="IDRECETA" Type="RECETA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="RECETA.LINEARECETA_HISTORICO" Member="LINEARECETA_HISTORICOs">
+    <Type Name="LINEARECETA_HISTORICO">
+      <Column Name="IDRECETA" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+      <Column Name="IDLINEA" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+      <Column Name="IDMEDICAMENTO" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+      <Column Name="IDFARMACIA" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0)" CanBeNull="true" />
+      <Column Name="CANTIDAD" Type="System.Decimal" DbType="Decimal(3,0)" CanBeNull="true" />
+      <Column Name="INSTRUCCIONES" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="RECETA.RECETA" Member="RECETAs">
+    <Type Name="RECETA">
+      <Column Name="IDRECETA" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDFACTURA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHAENTREGA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IDFARMACEUTICO" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+      <Association Name="RECETA_LINEARECETA" Member="LINEARECETAs" ThisKey="IDRECETA" OtherKey="IDRECETA" Type="LINEARECETA" />
+      <Association Name="CITA_RECETA" Member="CITA" ThisKey="IDCITA" OtherKey="IDCITA" Type="CITA" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="RECETA.RECETA_HISTORICO" Member="RECETA_HISTORICOs">
+    <Type Name="RECETA_HISTORICO">
+      <Column Name="IDRECETA" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+      <Column Name="IDFACTURA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+      <Column Name="FECHAENTREGA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IDFARMACEUTICO" Type="System.Decimal" DbType="Decimal(9,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SEDE.CENTRO" Member="CENTROs">
+    <Type Name="CENTRO">
+      <Column Name="CEDULAJURIDICA" Type="System.Decimal" DbType="Decimal(14,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RAZONSOCIAL" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="CENTRO_SEDE" Member="SEDEs" ThisKey="CEDULAJURIDICA" OtherKey="CEDULAJURIDICA" Type="SEDE" />
+    </Type>
+  </Table>
+  <Table Name="SEDE.SEDE" Member="SEDEs">
+    <Type Name="SEDE">
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CEDULAJURIDICA" Type="System.Decimal" DbType="Decimal(14,0) NOT NULL" CanBeNull="false" />
+      <Column Name="RAZONSOCIAL" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DIRECCION" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Association Name="SEDE_ORDENINTERNAMIENTO" Member="ORDENINTERNAMIENTOs" ThisKey="IDSEDE" OtherKey="SEDE" Type="ORDENINTERNAMIENTO" />
+      <Association Name="SEDE_FARMACIA" Member="FARMACIAs" ThisKey="IDSEDE" OtherKey="IDSEDE" Type="FARMACIA" />
+      <Association Name="SEDE_LABORATORIO" Member="LABORATORIOs" ThisKey="IDSEDE" OtherKey="IDSEDE" Type="LABORATORIO" />
+      <Association Name="CENTRO_SEDE" Member="CENTRO" ThisKey="CEDULAJURIDICA" OtherKey="CEDULAJURIDICA" Type="CENTRO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Function Name="CITA.eliminarCitaPorID" Method="eliminarCitaPorID">
+    <Parameter Name="IDCita" Parameter="iDCita" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="CITA.obtenerCitas" Method="obtenerCitas">
+    <ElementType Name="obtenerCitasResult">
+      <Column Name="Identificador" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Sede" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="MedicoN" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IDMedico" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="MedicoA" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Especialidad" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="IDEspecialidad" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Cedula" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Hora" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Factura" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="CITA.obtenerCitasParaMedicoPorPeriodo" Method="obtenerCitasParaMedicoPorPeriodo">
+    <Parameter Name="Medico" Parameter="medico" Type="System.Decimal" DbType="Decimal(9,0)" />
+    <Parameter Name="InicioPeriodo" Parameter="inicioPeriodo" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FinPeriodo" Parameter="finPeriodo" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="obtenerCitasParaMedicoPorPeriodoResult">
+      <Column Name="Identificador" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Sede" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="MedicoN" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="IDMedico" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="MedicoA" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Especialidad" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="IDEspecialidad" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Cedula" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Hora" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Factura" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="CITA.obtenerIDCitas" Method="obtenerIDCitas">
+    <ElementType Name="obtenerIDCitasResult">
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="EMPLEADO.obtenerDisponibilidadMedicoPorDia" Method="obtenerDisponibilidadMedicoPorDia">
+    <Parameter Name="Medico" Parameter="medico" Type="System.Decimal" DbType="Decimal(9,0)" />
+    <Parameter Name="Sede" Parameter="sede" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <Parameter Name="Dia" Parameter="dia" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="obtenerDisponibilidadMedicoPorDiaResult">
+      <Column Name="DIA" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="HORA" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="EMPLEADO.obtenerMedicosEspecialiadPorSede" Method="obtenerMedicosEspecialiadPorSede">
+    <Parameter Name="Sede" Parameter="sede" Type="System.Int32" DbType="Int" />
+    <ElementType Name="obtenerMedicosEspecialiadPorSedeResult">
+      <Column Name="APELLIDOS" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="ESPECIALIDAD" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="IDEMPLEADO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDESPECIALIDAD" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="EMPLEADO.obtenerMedicos" Method="obtenerMedicos">
+    <ElementType Name="obtenerMedicosResult">
+      <Column Name="IDEMPLEADO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDOS" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="PACIENTE.obtenerCedulaNombrePacientes" Method="obtenerCedulaNombrePacientes">
+    <ElementType Name="obtenerCedulaNombrePacientesResult">
+      <Column Name="CEDULA" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="APELLIDO" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NOMBRE" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="SEDE.obtenerSedes" Method="obtenerSedes">
+    <ElementType Name="obtenerSedesResult">
+      <Column Name="RAZONSOCIAL" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

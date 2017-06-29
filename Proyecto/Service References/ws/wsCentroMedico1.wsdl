@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53564/wsCentroMedico.svc?xsd=xsd0" namespace="http://tempuri.org" />
+      <xsd:import schemaLocation="http://localhost:53564/wsCentroMedico.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:53564/wsCentroMedico.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/" />
+      <xsd:import schemaLocation="http://localhost:53564/wsCentroMedico.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="wsCentroMedico_eliminarCita_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarCita" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_eliminarCita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_registrarCita_InputMessage">
+    <wsdl:part name="parameters" element="tns:registrarCita" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_registrarCita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registrarCitaResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getIDCitas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getIDCitas" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getIDCitas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getIDCitasResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getCitas_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCitas" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getCitas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCitasResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getPacientes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPacientes" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getPacientes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPacientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getMedicos_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMedicos" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getMedicos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMedicosResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getMedicosSolos_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMedicosSolos" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getMedicosSolos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMedicosSolosResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getCitasPorPeriodoMedico_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCitasPorPeriodoMedico" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getCitasPorPeriodoMedico_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCitasPorPeriodoMedicoResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getSedes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSedes" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getSedes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSedesResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getHorarios_InputMessage">
+    <wsdl:part name="parameters" element="tns:getHorarios" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getHorarios_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getHorariosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsCentroMedico">
+    <wsdl:operation name="eliminarCita">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/eliminarCita" message="tns:wsCentroMedico_eliminarCita_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/eliminarCitaResponse" message="tns:wsCentroMedico_eliminarCita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarCita">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/registrarCita" message="tns:wsCentroMedico_registrarCita_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/registrarCitaResponse" message="tns:wsCentroMedico_registrarCita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getIDCitas">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getIDCitas" message="tns:wsCentroMedico_getIDCitas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getIDCitasResponse" message="tns:wsCentroMedico_getIDCitas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCitas">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getCitas" message="tns:wsCentroMedico_getCitas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getCitasResponse" message="tns:wsCentroMedico_getCitas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPacientes">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getPacientes" message="tns:wsCentroMedico_getPacientes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getPacientesResponse" message="tns:wsCentroMedico_getPacientes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMedicos">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getMedicos" message="tns:wsCentroMedico_getMedicos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getMedicosResponse" message="tns:wsCentroMedico_getMedicos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMedicosSolos">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getMedicosSolos" message="tns:wsCentroMedico_getMedicosSolos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getMedicosSolosResponse" message="tns:wsCentroMedico_getMedicosSolos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCitasPorPeriodoMedico">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getCitasPorPeriodoMedico" message="tns:wsCentroMedico_getCitasPorPeriodoMedico_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getCitasPorPeriodoMedicoResponse" message="tns:wsCentroMedico_getCitasPorPeriodoMedico_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSedes">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getSedes" message="tns:wsCentroMedico_getSedes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getSedesResponse" message="tns:wsCentroMedico_getSedes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getHorarios">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getHorarios" message="tns:wsCentroMedico_getHorarios_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getHorariosResponse" message="tns:wsCentroMedico_getHorarios_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

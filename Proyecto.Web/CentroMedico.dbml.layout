@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 23, 33.625" name="CentroMedico">
+  <DataContextMoniker Name="/dcCentroMedico" />
+  <nestedChildShapes>
+    <classShape Id="782ee6a0-c89a-46e9-b986-c2b4a66e1edc" absoluteBounds="6.5, 8, 2, 2.9247054036458344">
+      <DataClassMoniker Name="/dcCentroMedico/CITA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9290d025-e0cb-43f4-9d23-8edb0c168bc0" absoluteBounds="6.515, 8.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="212f7293-55d8-4de8-9dc1-55bc1cbdcc57" absoluteBounds="6.75, 0.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/dcCentroMedico/CITA_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="130fb434-880d-4f3c-b392-335d430cb75c" absoluteBounds="6.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="022c7208-0b35-4d21-aab1-4c60b484696f" absoluteBounds="12.25, 8.625, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/dcCentroMedico/ORDENINTERNAMIENTO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5d28476-00e2-420b-98aa-ee0ca5161ccc" absoluteBounds="12.265, 9.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68b392c8-2678-42ae-be23-3e9fe83eecec" absoluteBounds="11.75, 11.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/dcCentroMedico/ORDENINTERNAMIENTO_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79c41f6d-a88b-4ae8-b4b7-89e0051475c5" absoluteBounds="11.765, 12.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e1022212-b4ba-4a3e-b6b8-cd3151961e3b" absoluteBounds="9.25, 6.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/REFERENCIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20c7171c-dfe8-474d-a10a-bf034f803b40" absoluteBounds="9.265, 7.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe06e61a-2d19-4e3f-8842-14795dc162b5" absoluteBounds="14.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/REFERENCIA_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d95d95d-eba5-4a4d-acff-4dc76c1dc91e" absoluteBounds="14.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1c06f9a-a983-49c3-b083-5da65026f90c" absoluteBounds="9.25, 9.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/SEGUIMIENTO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a47fcfc7-6adc-40d8-a7c4-f759a0c62e13" absoluteBounds="9.265, 10.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5688d48e-69d3-4362-bb12-b04275418a6c" absoluteBounds="14.75, 8.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/SEGUIMIENTO_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dccd1ad5-db0f-4e04-88d3-9ad3325fae2f" absoluteBounds="14.765, 9.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c27aee77-608b-4eed-a385-3cf55d06b837" absoluteBounds="1.75, 21.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/dcCentroMedico/EMPLEADO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b509e643-b4d2-4941-b93d-0aea2353afc7" absoluteBounds="1.7650000000000001, 22.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ae48bd63-2852-4d7c-87db-a1f93eaaafd7" absoluteBounds="14.75, 11.75, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/dcCentroMedico/EMPLEADO_BITACORA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f717637f-27c3-471c-bde3-6b8e2146276a" absoluteBounds="14.765, 12.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e14777f0-c981-4448-be4f-a92bbfdbb2a7" absoluteBounds="1, 18.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/EMPLEADOSEDE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f9dae489-5d8d-471c-85d3-65f2454851f3" absoluteBounds="1.0150000000000001, 19.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dfdb097b-921e-474e-8f7a-1774f51c4cb0" absoluteBounds="9.5, 24.875, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/dcCentroMedico/ENCARGADOLAB" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78b7a7a0-3ed2-4ed1-864d-44b77ecbed42" absoluteBounds="9.515, 25.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b4154bf-2984-417b-9ebf-4cf6aad3c20d" absoluteBounds="12.25, 19, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/dcCentroMedico/ENCARGADOFARMACIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31fa07ae-1fea-4f5a-93b0-f28541fa3db2" absoluteBounds="12.265, 19.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="69c6c363-7f2f-4382-896b-e8920b5bb5a8" absoluteBounds="6.5, 5.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dcCentroMedico/ESPECIALIDAD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9a4ffb0-3c18-4696-86a0-3e701987f82a" absoluteBounds="6.515, 6.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4b767c3a-e749-4465-80ea-611176bb7876" absoluteBounds="3.75, 3.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/HORARIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da22ff30-92fa-45e5-8d43-f13b7631e60c" absoluteBounds="3.765, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15bb158f-c0b3-4152-a968-48d1b637694c" absoluteBounds="3.75, 18.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/MEDICOESPECIALIDAD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97d5dac1-18eb-4ae2-b181-631d6bda5d50" absoluteBounds="3.765, 19.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ebab7dd-7dd1-4df9-ae01-ee8f6fc78853" absoluteBounds="2, 25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/dcCentroMedico/PUESTO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43579c22-c2b4-463b-aefe-e7de93688f4a" absoluteBounds="2.015, 25.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="215792ae-c597-409d-8fb1-c57cad696ee4" absoluteBounds="3.75, 6.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dcCentroMedico/FACTURA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22876155-99c1-499f-b7a5-dfb841722373" absoluteBounds="3.765, 6.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9d182ac7-fa46-4606-92cf-70b08224ef31" absoluteBounds="14.75, 15.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dcCentroMedico/FACTURA_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fe738447-033e-460e-a263-6482c1648dcb" absoluteBounds="14.765, 16.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a1aefa0-172e-4382-bf2c-da42f03fa49f" absoluteBounds="6.5, 18.875, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/dcCentroMedico/FARMACIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="103e8642-1c9b-4dd1-98d2-0ebb08277d5d" absoluteBounds="6.515, 19.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29a26fe0-0754-42d9-b957-1d5829614567" absoluteBounds="6.5, 20.75, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/dcCentroMedico/MEDICAMENTO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f2cc3cde-424c-4897-80fc-b0c30f3a1b3d" absoluteBounds="6.515, 21.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="97b46506-50c5-48eb-a8f4-f3d2ac775839" absoluteBounds="9.25, 19.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/MEDICAMENTOFARMACIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a34bfae8-e901-4417-b1fe-d3ebb42a92e6" absoluteBounds="9.265, 20.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85b3a9ea-666b-4505-94ec-5cd84e017352" absoluteBounds="6.75, 27.625, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/dcCentroMedico/EXAMEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43da0975-7da5-4bae-9454-9cf92ef167d4" absoluteBounds="6.765, 28.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8273bd4-e7e3-4fc8-a6df-4aeb9937572d" absoluteBounds="9.5, 29.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/EXAMENLABORATORIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac29697e-3665-412e-8d70-1da98fbc9583" absoluteBounds="9.515, 30.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1037c06-8185-402a-8dfb-a2c5d26d402c" absoluteBounds="12.25, 2.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/ITEM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="443447fc-ac4c-4353-87d6-27757f3366b5" absoluteBounds="12.265, 3.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f13d837d-19d1-4a60-a835-7b9405fc02fc" absoluteBounds="15, 5.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/dcCentroMedico/ITEMSOLICITUD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="803ca88b-68fb-43d1-b406-b544da8e3842" absoluteBounds="15.015, 6.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89ff93b1-59f9-4bac-9920-716e77681e3a" absoluteBounds="17.75, 0.75, 2, 1.7708968098958329">
+      <DataClassMoniker Name="/dcCentroMedico/ITEMSOLICITUD_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="963f290a-3305-4e4f-82a4-fdc72fa4749c" absoluteBounds="17.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="228abee1-30bb-4c84-83f1-b7c668864fac" absoluteBounds="6.75, 30.875, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/dcCentroMedico/LABORATORIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d132ef15-7812-4bf5-824f-6c2e4d49742c" absoluteBounds="6.765, 31.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb2307a8-e5ad-4a8c-915c-83de86ae958e" absoluteBounds="12.25, 5.25, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/dcCentroMedico/SOLICITUDEXAMEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5833d06-c995-46d6-9e1b-7819c7ea2194" absoluteBounds="12.265, 5.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b69906a8-5c2d-4bd6-a478-6982b5c509e8" absoluteBounds="17.75, 3.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/dcCentroMedico/SOLICITUDEXAMEN_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87f5c24f-3997-40fa-aadc-3cfdc5a55972" absoluteBounds="17.765, 4.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ded27401-621c-490b-9486-e122dbf7bce2" absoluteBounds="4, 29.75, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/dcCentroMedico/TIPOLABORATORIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b8d28ab-5163-415a-87e0-0f99f5a93c04" absoluteBounds="4.015, 30.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="226b9c1b-b1ab-4402-beb5-25eff4721b06" absoluteBounds="3.75, 0.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dcCentroMedico/ANTECEDENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97792930-752f-43d3-8a22-d4a043b4e312" absoluteBounds="3.765, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="140693a7-dbfa-4cd6-b98d-341cbe753a24" absoluteBounds="6.5, 11.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/dcCentroMedico/ANTECEDENTEPACIENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd75dae9-179e-4ecf-ae15-27979cb07bde" absoluteBounds="6.515, 12.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="daa102f7-b1d3-4bfe-8902-6c23129fb966" absoluteBounds="17.75, 7.75, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/dcCentroMedico/ANTECEDENTEPACIENTE_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bc9ba20-8446-44d1-b204-515c7ae9df72" absoluteBounds="17.765, 8.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="09f17453-2e67-4272-95cd-ec0608dcc304" absoluteBounds="3.5, 13.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/dcCentroMedico/CONTACTORESPONSABLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bdb784f-788e-4dd2-847d-691e27f773d2" absoluteBounds="3.515, 14.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="91a4fee5-35f1-4417-9ac9-953d6d37b578" absoluteBounds="17.75, 10.75, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/dcCentroMedico/CONTACTORESPONSABLE_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b22e33dc-812a-4230-97ad-0d52e1b795b8" absoluteBounds="17.765, 11.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4d79bc00-5790-4385-b19e-4b563d0f6ed3" absoluteBounds="0.75, 11.25, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/dcCentroMedico/PACIENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5632036-86a1-4776-a9db-21b4ea9d84c9" absoluteBounds="0.765, 11.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2ccd7df2-14f2-4469-a09f-05a870047f31" absoluteBounds="17.75, 13.75, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/dcCentroMedico/PACIENTE_BITACORA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="490b1c94-c86c-4035-b0f0-51d974966fdb" absoluteBounds="17.765, 14.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e5f38f8-52ac-4128-9693-e0cea253b3c4" absoluteBounds="17.75, 17.75, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/dcCentroMedico/PACIENTE_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89f46906-7c6b-41cb-8c12-4e4ec76e8d70" absoluteBounds="17.765, 18.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34be358a-5a58-4a3b-a6b6-7142f6cbb5e1" absoluteBounds="3.5, 9.625, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/dcCentroMedico/PACIENTETELEFONO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9057030c-6422-42c1-94c1-dc1f58db75ec" absoluteBounds="3.515, 10.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4de8c901-a580-491b-997a-21398e0bdb66" absoluteBounds="20.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dcCentroMedico/PACIENTETELEFONO_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f52d77c5-3d0e-43fc-912e-9e508c64534e" absoluteBounds="20.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3ae6075d-fbd4-4d8e-aff5-d4f32e73ddca" absoluteBounds="6.25, 15.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/SIGNOVITALVALORACION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bb4eef0-c612-4b13-8a29-921a2cca8bbf" absoluteBounds="6.265, 16.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7c1ca8b8-4ccf-4c7d-bb5a-c789ed4ef207" absoluteBounds="20.75, 2.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcCentroMedico/SIGNOVITALVALORACION_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3b7812f-45a2-4705-84f8-2d786e9ea546" absoluteBounds="20.765, 3.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e8113d0-698b-4914-b636-e4b4ebed015d" absoluteBounds="3.5, 16, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dcCentroMedico/VALORACIONEMERGENCIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ababa5a-27cf-445a-9d02-5268ec62014f" absoluteBounds="3.515, 16.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aef3302c-7ce7-430d-9baa-c684fb9b3398" absoluteBounds="20.75, 5.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dcCentroMedico/VALORACIONEMERGENCIA_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a5d84c6c-fa0c-4693-aaed-f874bb5d9a49" absoluteBounds="20.765, 6.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0918314-8b1f-4d50-90e8-403c7264931c" absoluteBounds="12, 14.375, 2, 2.1554996744791648">
+      <DataClassMoniker Name="/dcCentroMedico/LINEARECETA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c64d3512-5f44-4da9-8367-bd20525e9598" absoluteBounds="12.015, 14.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ddb722be-caea-4abb-b718-62fb5d140563" absoluteBounds="20.75, 8.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dcCentroMedico/LINEARECETA_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="228e144c-603a-4dbe-84aa-c054eed1e554" absoluteBounds="20.765, 9.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a142aa2-9a4c-4b7d-9e55-315c798b5655" absoluteBounds="9.25, 14.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/dcCentroMedico/RECETA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="641ae878-0a6e-4fda-9941-6c1707280d3d" absoluteBounds="9.265, 15.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="32e75853-30e7-4294-bf7b-1d4506646e0b" absoluteBounds="20.75, 11.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/dcCentroMedico/RECETA_HISTORICO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67df91a6-2b52-4677-835c-52f1a3c12027" absoluteBounds="20.765, 12.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8dc25960-727c-479f-971d-4577aa000625" absoluteBounds="1.25, 31.875, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/dcCentroMedico/CENTRO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6e88c96-03df-4424-b72c-d918131addf3" absoluteBounds="1.2650000000000001, 32.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="19f1cc25-00c2-4959-9d20-6374b39cd950" absoluteBounds="4, 31.75, 2, 1.578595377604163">
+      <DataClassMoniker Name="/dcCentroMedico/SEDE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1ab2e17-9081-4e62-b566-5e732a8626a2" absoluteBounds="4.015, 32.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.5 : 9.15625); (11.4166666666667 : 9.15625 : JumpStart); (11.5833333333333 : 9.15625 : JumpEnd); (12.25 : 9.15625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/CITA/CITA_ORDENINTERNAMIENTO" />
+      <nodes>
+        <classShapeMoniker Id="782ee6a0-c89a-46e9-b986-c2b4a66e1edc" />
+        <classShapeMoniker Id="022c7208-0b35-4d21-aab1-4c60b484696f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 8); (8.875 : 7.625); (8.875 : 8.57859537760417); (9.25 : 8.20359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dcCentroMedico/CITA/CITA_REFERENCIA" />
+      <nodes>
+        <classShapeMoniker Id="782ee6a0-c89a-46e9-b986-c2b4a66e1edc" />
+        <classShapeMoniker Id="e1022212-b4ba-4a3e-b6b8-cd3151961e3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 10.3373527018229); (9.25 : 10.3373527018229)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/CITA/CITA_SEGUIMIENTO" />
+      <nodes>
+        <classShapeMoniker Id="782ee6a0-c89a-46e9-b986-c2b4a66e1edc" />
+        <classShapeMoniker Id="d1c06f9a-a983-49c3-b083-5da65026f90c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.375 : 21.75); (2.375 : 20.4535953776042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/EMPLEADO/EMPLEADO_EMPLEADOSEDE" />
+      <nodes>
+        <classShapeMoniker Id="c27aee77-608b-4eed-a385-3cf55d06b837" />
+        <classShapeMoniker Id="e14777f0-c981-4448-be4f-a92bbfdbb2a7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.34375 : 20.4535953776042); (1.34375 : 24.90625); (2.79166666666667 : 24.90625 : JumpStart); (2.95833333333333 : 24.90625 : JumpEnd); (6.16666666666667 : 24.90625 : JumpStart); (6.33333333333333 : 24.90625 : JumpEnd); (9.5 : 24.90625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/EMPLEADOSEDE/EMPLEADOSEDE_ENCARGADOLAB" />
+      <nodes>
+        <classShapeMoniker Id="e14777f0-c981-4448-be4f-a92bbfdbb2a7" />
+        <classShapeMoniker Id="dfdb097b-921e-474e-8f7a-1774f51c4cb0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2 : 18.875); (2 : 18.625); (5.57291666666667 : 18.625 : JumpStart); (5.73958333333333 : 18.625 : JumpEnd); (11.5416666666667 : 18.625 : JumpStart); (11.8333333333333 : 18.625 : JumpEnd); (11.875 : 18.625); (11.875 : 19.6931469726563); (12.0104166666667 : 19.6931469726563 : JumpStart); (12.1770833333333 : 19.6931469726563 : JumpEnd); (12.25 : 19.6931469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/EMPLEADOSEDE/EMPLEADOSEDE_ENCARGADOFARMACIA" />
+      <nodes>
+        <classShapeMoniker Id="e14777f0-c981-4448-be4f-a92bbfdbb2a7" />
+        <classShapeMoniker Id="5b4154bf-2984-417b-9ebf-4cf6aad3c20d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 6.88064697265625); (9.25 : 6.88064697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/ESPECIALIDAD/ESPECIALIDAD_REFERENCIA" />
+      <nodes>
+        <classShapeMoniker Id="69c6c363-7f2f-4382-896b-e8920b5bb5a8" />
+        <classShapeMoniker Id="e1022212-b4ba-4a3e-b6b8-cd3151961e3b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 4.95359537760417); (6.125 : 5.32859537760417); (6.125 : 9.46235270182292); (6.19791666666667 : 9.46235270182292 : JumpStart); (6.36458333333333 : 9.46235270182292 : JumpEnd); (6.5 : 9.46235270182292)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/HORARIO/HORARIO_CITA" />
+      <nodes>
+        <classShapeMoniker Id="4b767c3a-e749-4465-80ea-611176bb7876" />
+        <classShapeMoniker Id="782ee6a0-c89a-46e9-b986-c2b4a66e1edc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.65625 : 18.875); (5.65625 : 8.69992385091146); (6.04166666666667 : 8.69992385091146 : JumpStart); (6.36458333333333 : 8.69992385091146 : JumpEnd); (6.5 : 8.69992385091146)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/MEDICOESPECIALIDAD/MEDICOESPECIALIDAD_CITA" />
+      <nodes>
+        <classShapeMoniker Id="15bb158f-c0b3-4152-a968-48d1b637694c" />
+        <classShapeMoniker Id="782ee6a0-c89a-46e9-b986-c2b4a66e1edc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 19.6642976888021); (3.75 : 19.6642976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/EMPLEADOSEDE/EMPLEADOSEDE_MEDICOESPECIALIDAD" />
+      <nodes>
+        <classShapeMoniker Id="e14777f0-c981-4448-be4f-a92bbfdbb2a7" />
+        <classShapeMoniker Id="15bb158f-c0b3-4152-a968-48d1b637694c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.875 : 25); (2.875 : 23.7131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/PUESTO/PUESTO_EMPLEADO" />
+      <nodes>
+        <classShapeMoniker Id="5ebab7dd-7dd1-4df9-ae01-ee8f6fc78853" />
+        <classShapeMoniker Id="c27aee77-608b-4eed-a385-3cf55d06b837" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.703125 : 7.6362939453125); (5.703125 : 8.31870942545573); (6.04166666666667 : 8.31870942545573 : JumpStart); (6.36458333333333 : 8.31870942545573 : JumpEnd); (6.5 : 8.31870942545573)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/FACTURA/FACTURA_CITA" />
+      <nodes>
+        <classShapeMoniker Id="215792ae-c597-409d-8fb1-c57cad696ee4" />
+        <classShapeMoniker Id="782ee6a0-c89a-46e9-b986-c2b4a66e1edc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 19.2840734863281); (11.5416666666667 : 19.2840734863281 : JumpStart); (11.9583333333333 : 19.2840734863281 : JumpEnd); (12.0104166666667 : 19.2840734863281 : JumpStart); (12.1770833333333 : 19.2840734863281 : JumpEnd); (12.25 : 19.2840734863281)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/FARMACIA/FARMACIA_ENCARGADOFARMACIA" />
+      <nodes>
+        <classShapeMoniker Id="6a1aefa0-172e-4382-bf2c-da42f03fa49f" />
+        <classShapeMoniker Id="5b4154bf-2984-417b-9ebf-4cf6aad3c20d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 19.9094962565104); (9.25 : 19.9094962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/FARMACIA/FARMACIA_MEDICAMENTOFARMACIA" />
+      <nodes>
+        <classShapeMoniker Id="6a1aefa0-172e-4382-bf2c-da42f03fa49f" />
+        <classShapeMoniker Id="97b46506-50c5-48eb-a8f4-f3d2ac775839" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 21.0392976888021); (9.25 : 21.0392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/MEDICAMENTO/MEDICAMENTO_MEDICAMENTOFARMACIA" />
+      <nodes>
+        <classShapeMoniker Id="29a26fe0-0754-42d9-b957-1d5829614567" />
+        <classShapeMoniker Id="97b46506-50c5-48eb-a8f4-f3d2ac775839" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 28.3181469726563); (9.04166666666667 : 28.3181469726563 : JumpStart); (9.20833333333333 : 28.3181469726563 : JumpEnd); (10.5 : 28.3181469726563); (10.5 : 29.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/EXAMEN/EXAMEN_EXAMENLABORATORIO" />
+      <nodes>
+        <classShapeMoniker Id="85b3a9ea-666b-4505-94ec-5cd84e017352" />
+        <classShapeMoniker Id="b8273bd4-e7e3-4fc8-a6df-4aeb9937572d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 3.41429768880208); (16 : 3.41429768880208); (16 : 5.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/ITEM/ITEM_ITEMSOLICITUD" />
+      <nodes>
+        <classShapeMoniker Id="a1037c06-8185-402a-8dfb-a2c5d26d402c" />
+        <classShapeMoniker Id="f13d837d-19d1-4a60-a835-7b9405fc02fc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 30.875); (9.125 : 30.5); (9.125 : 25.6150239726563); (9.5 : 25.6150239726563)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/LABORATORIO/LABORATORIO_ENCARGADOLAB" />
+      <nodes>
+        <classShapeMoniker Id="228abee1-30bb-4c84-83f1-b7c668864fac" />
+        <classShapeMoniker Id="dfdb097b-921e-474e-8f7a-1774f51c4cb0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 31.0705501888021); (9.5 : 31.0705501888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/LABORATORIO/LABORATORIO_EXAMENLABORATORIO" />
+      <nodes>
+        <classShapeMoniker Id="228abee1-30bb-4c84-83f1-b7c668864fac" />
+        <classShapeMoniker Id="b8273bd4-e7e3-4fc8-a6df-4aeb9937572d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 6.51044840494792); (15 : 6.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/SOLICITUDEXAMEN/SOLICITUDEXAMEN_ITEMSOLICITUD" />
+      <nodes>
+        <classShapeMoniker Id="cb2307a8-e5ad-4a8c-915c-83de86ae958e" />
+        <classShapeMoniker Id="f13d837d-19d1-4a60-a835-7b9405fc02fc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 8.67992018880208); (11.4166666666667 : 8.67992018880208 : JumpStart); (11.5833333333333 : 8.67992018880208 : JumpEnd); (12 : 8.67992018880208); (12 : 8.375); (13.25 : 8.375); (13.25 : 7.7901025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/CITA/CITA_SOLICITUDEXAMEN" />
+      <nodes>
+        <classShapeMoniker Id="782ee6a0-c89a-46e9-b986-c2b4a66e1edc" />
+        <classShapeMoniker Id="cb2307a8-e5ad-4a8c-915c-83de86ae958e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.031252 : 29.625); (11.031252 : 26.5112939453125); (11.5416666666667 : 26.5112939453125 : JumpStart); (11.7083333333333 : 26.5112939453125 : JumpEnd); (11.75 : 26.5112939453125); (11.75 : 13.7708968098958); (11.5 : 13.7708968098958); (11.5 : 6.52005126953125); (12.25 : 6.52005126953125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/EXAMENLABORATORIO/EXAMENLABORATORIO_SOLICITUDEXAMEN" />
+      <nodes>
+        <classShapeMoniker Id="b8273bd4-e7e3-4fc8-a6df-4aeb9937572d" />
+        <classShapeMoniker Id="cb2307a8-e5ad-4a8c-915c-83de86ae958e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 30.2812475); (6.16666666666667 : 30.2812475 : JumpStart); (6.33333333333333 : 30.2812475 : JumpEnd); (7.7187475 : 30.2812475); (7.7187475 : 30.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/TIPOLABORATORIO/TIPOLABORATORIO_LABORATORIO" />
+      <nodes>
+        <classShapeMoniker Id="ded27401-621c-490b-9486-e122dbf7bce2" />
+        <classShapeMoniker Id="228abee1-30bb-4c84-83f1-b7c668864fac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 2.0368455607472); (6.28125 : 2.5680955607472); (6.28125 : 12.4431469726562); (6.5 : 12.4431469726562)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/ANTECEDENTE/ANTECEDENTE_ANTECEDENTEPACIENTE" />
+      <nodes>
+        <classShapeMoniker Id="226b9c1b-b1ab-4402-beb5-25eff4721b06" />
+        <classShapeMoniker Id="140693a7-dbfa-4cd6-b98d-341cbe753a24" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 11.25); (1.75 : 9.08113827636719); (5.57291666666667 : 9.08113827636719 : JumpStart); (5.73958333333333 : 9.08113827636719 : JumpEnd); (6.04166666666667 : 9.08113827636719 : JumpStart); (6.36458333333333 : 9.08113827636719 : JumpEnd); (6.5 : 9.08113827636719)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/PACIENTE/PACIENTE_CITA" />
+      <nodes>
+        <classShapeMoniker Id="4d79bc00-5790-4385-b19e-4b563d0f6ed3" />
+        <classShapeMoniker Id="782ee6a0-c89a-46e9-b986-c2b4a66e1edc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 12.0340734863281); (5.57291666666667 : 12.0340734863281 : JumpStart); (5.73958333333333 : 12.0340734863281 : JumpEnd); (6.19791666666667 : 12.0340734863281 : JumpStart); (6.36458333333333 : 12.0340734863281 : JumpEnd); (6.5 : 12.0340734863281)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/PACIENTE/PACIENTE_ANTECEDENTEPACIENTE" />
+      <nodes>
+        <classShapeMoniker Id="4d79bc00-5790-4385-b19e-4b563d0f6ed3" />
+        <classShapeMoniker Id="140693a7-dbfa-4cd6-b98d-341cbe753a24" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 12.9232887431641); (4.5 : 12.9232887431641); (4.5 : 13.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/PACIENTE/PACIENTE_CONTACTORESPONSABLE" />
+      <nodes>
+        <classShapeMoniker Id="4d79bc00-5790-4385-b19e-4b563d0f6ed3" />
+        <classShapeMoniker Id="09f17453-2e67-4272-95cd-ec0608dcc304" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 11.25); (2.2812525 : 10.2219962565104); (3.5 : 10.2219962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/PACIENTE/PACIENTE_PACIENTETELEFONO" />
+      <nodes>
+        <classShapeMoniker Id="4d79bc00-5790-4385-b19e-4b563d0f6ed3" />
+        <classShapeMoniker Id="34be358a-5a58-4a3b-a6b6-7142f6cbb5e1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 16.6931469726563); (5.57291666666667 : 16.6931469726563 : JumpStart); (5.73958333333333 : 16.6931469726563 : JumpEnd); (6.25 : 16.6931469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/VALORACIONEMERGENCIA/VALORACIONEMERGENCIA_SIGNOVITALVALORACION" />
+      <nodes>
+        <classShapeMoniker Id="9e8113d0-698b-4914-b636-e4b4ebed015d" />
+        <classShapeMoniker Id="3ae6075d-fbd4-4d8e-aff5-d4f32e73ddca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 13.7901025390625); (1.75 : 16.6931469726563); (3.5 : 16.6931469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/PACIENTE/PACIENTE_VALORACIONEMERGENCIA" />
+      <nodes>
+        <classShapeMoniker Id="4d79bc00-5790-4385-b19e-4b563d0f6ed3" />
+        <classShapeMoniker Id="9e8113d0-698b-4914-b636-e4b4ebed015d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 20.8886946614583); (11.5416666666667 : 20.8886946614583 : JumpStart); (11.8333333333333 : 20.8886946614583 : JumpEnd); (12.09375 : 20.8886946614583); (12.09375 : 16.5304996744792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/MEDICAMENTOFARMACIA/MEDICAMENTOFARMACIA_LINEARECETA" />
+      <nodes>
+        <classShapeMoniker Id="97b46506-50c5-48eb-a8f4-f3d2ac775839" />
+        <classShapeMoniker Id="d0918314-8b1f-4d50-90e8-403c7264931c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 15.5104484049479); (11.6666666666667 : 15.5104484049479 : JumpStart); (11.8333333333333 : 15.5104484049479 : JumpEnd); (12 : 15.5104484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/RECETA/RECETA_LINEARECETA" />
+      <nodes>
+        <classShapeMoniker Id="1a142aa2-9a4c-4b7d-9e55-315c798b5655" />
+        <classShapeMoniker Id="d0918314-8b1f-4d50-90e8-403c7264931c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 10.9247054036458); (8.875 : 11.2997054036458); (8.875 : 15.5104484049479); (9.25 : 15.5104484049479)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/CITA/CITA_RECETA" />
+      <nodes>
+        <classShapeMoniker Id="782ee6a0-c89a-46e9-b986-c2b4a66e1edc" />
+        <classShapeMoniker Id="1a142aa2-9a4c-4b7d-9e55-315c798b5655" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 32.8261941614583); (11.625 : 32.8261941614583); (11.625 : 16.7804996744792); (11.6666666666667 : 16.7804996744792 : JumpStart); (11.8333333333333 : 16.7804996744792 : JumpEnd); (12.0104166666667 : 16.7804996744792 : JumpStart); (12.1770833333333 : 16.7804996744792 : JumpEnd); (14.25 : 16.7804996744792); (14.25 : 10.7708968098958); (13.25 : 10.7708968098958); (13.25 : 10.3958968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/SEDE/SEDE_ORDENINTERNAMIENTO" />
+      <nodes>
+        <classShapeMoniker Id="19f1cc25-00c2-4959-9d20-6374b39cd950" />
+        <classShapeMoniker Id="022c7208-0b35-4d21-aab1-4c60b484696f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5 : 31.75); (5 : 31.1939925130208); (6.25 : 31.1939925130208); (6.25 : 19.4719962565104); (6.5 : 19.4719962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/SEDE/SEDE_FARMACIA" />
+      <nodes>
+        <classShapeMoniker Id="19f1cc25-00c2-4959-9d20-6374b39cd950" />
+        <classShapeMoniker Id="6a1aefa0-172e-4382-bf2c-da42f03fa49f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 32.0056469726563); (6.75 : 32.0056469726563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/SEDE/SEDE_LABORATORIO" />
+      <nodes>
+        <classShapeMoniker Id="19f1cc25-00c2-4959-9d20-6374b39cd950" />
+        <classShapeMoniker Id="228abee1-30bb-4c84-83f1-b7c668864fac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.25 : 32.4719962565104); (4 : 32.4719962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcCentroMedico/CENTRO/CENTRO_SEDE" />
+      <nodes>
+        <classShapeMoniker Id="8dc25960-727c-479f-971d-4577aa000625" />
+        <classShapeMoniker Id="19f1cc25-00c2-4959-9d20-6374b39cd950" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

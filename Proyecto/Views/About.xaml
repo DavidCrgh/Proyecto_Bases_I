@@ -1,0 +1,36 @@
+﻿<navigation:Page x:Class="Proyecto.About" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="700"
+    Title="About" 
+    Style="{StaticResource PageStyle}">
+
+    <Grid x:Name="LayoutRoot">
+        <ScrollViewer x:Name="PageScrollViewer" Style="{StaticResource PageScrollViewerStyle}">
+
+            <StackPanel x:Name="ContentStackPanel">
+
+                <TextBlock x:Name="HeaderText" Style="{StaticResource HeaderTextStyle}" 
+                           Text="Acerca de"/>
+                <TextBlock x:Name="ContentFecha" Style="{StaticResource ContentTextStyle}" 
+                           Text="Bases de datos I - 2017"/>
+                <TextBlock x:Name="ContentProyecto" Style="{StaticResource ContentTextStyle}" 
+                           Text="Primer semestre - Proyecto Final"/>
+                <TextBlock x:Name="ContentIntegrantes" Style="{StaticResource ContentTextStyle}">
+                    <Run Text="Integrantes:" />
+                    <LineBreak />
+                    <Run Text="     Pablo Brenes" />
+                    <LineBreak/>
+                    <Run Text="     Jeison Esquivel" />
+                    <LineBreak/>
+                    <Run Text="     David Valverde" />
+                </TextBlock>
+
+            </StackPanel>
+
+        </ScrollViewer>
+    </Grid>
+
+</navigation:Page>

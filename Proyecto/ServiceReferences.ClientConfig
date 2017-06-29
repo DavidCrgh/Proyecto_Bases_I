@@ -1,0 +1,17 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <customBinding>
+                <binding name="CustomBinding_wsCentroMedico">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="../wsCentroMedico.svc" binding="customBinding"
+                bindingConfiguration="CustomBinding_wsCentroMedico" contract="ws.wsCentroMedico"
+                name="CustomBinding_wsCentroMedico" />
+        </client>
+    </system.serviceModel>
+</configuration>
