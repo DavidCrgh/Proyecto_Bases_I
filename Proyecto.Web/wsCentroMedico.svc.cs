@@ -36,10 +36,10 @@ namespace Proyecto.Web
 
         //Eliminar un item
         [OperationContract]
-        public bool eliminarItem(decimal IDItem)
+        public bool eliminarItem(decimal IDItem, decimal IDExamen)
         {
             var dataBase = new dcCentroMedico();
-            dataBase.eliminarItemPorID(IDItem);
+            dataBase.eliminarItemPorID(IDItem, IDExamen);
             return true;
         }
 

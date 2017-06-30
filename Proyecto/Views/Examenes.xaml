@@ -71,7 +71,7 @@
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
                 <Button x:Name="BN_ActualizarItem" Content="Actualizar item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25"/>
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
-                <Button x:Name="BN_BorrarItem" Content="Borrar item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+                <Button x:Name="BN_BorrarItem" Content="Borrar item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_BorrarItem_Click" />
             </StackPanel>
             <Rectangle Style="{StaticResource DividerStyle}" Margin="5,5"/>
             <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">

@@ -35,6 +35,7 @@ namespace Proyecto.Views
             servicio.getIDExamenesAsync();
             servicio.getIDItemsCompleted += new EventHandler<ws.getIDItemsCompletedEventArgs>(cargarIDItems);
             servicio.eliminarExamenCompleted += new EventHandler<ws.eliminarExamenCompletedEventArgs>(eliminarExamen);
+            servicio.eliminarItemCompleted += new EventHandler<ws.eliminarItemCompletedEventArgs>(eliminarItem);
         }
 
         // Executes when the user navigates to this page.
@@ -47,6 +48,13 @@ namespace Proyecto.Views
         public void eliminarExamen(object sender, ws.eliminarExamenCompletedEventArgs e)
         {
             servicio.getExamenesAsync();
+            servicio.getItemsAsync();
+            servicio.getIDExamenesAsync();
+        }
+
+        //Evento lanzado al finalizar eliminarItemAsync()
+        public void eliminarItem(object sender, ws.eliminarItemCompletedEventArgs e)
+        {
             servicio.getItemsAsync();
             servicio.getIDExamenesAsync();
         }
@@ -120,6 +128,20 @@ namespace Proyecto.Views
             try
             {
                 servicio.eliminarExamenAsync(IDExamenes[CB_ID_UpdateExamen.SelectedIndex]);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void BN_BorrarItem_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                decimal IDItem = IDItems[CB_ID_UpdateItem.SelectedIndex];
+                decimal IDExamen = IDExamenes[CB_ID_UpdateExamen.SelectedIndex];
+                servicio.eliminarItemAsync(IDItem, IDExamen);
             }
             catch
             {

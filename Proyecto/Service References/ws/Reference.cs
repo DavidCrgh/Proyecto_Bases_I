@@ -885,7 +885,7 @@ namespace Proyecto.ws {
         bool EndeliminarExamen(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/eliminarItem", ReplyAction="http://tempuri.org/wsCentroMedico/eliminarItemResponse")]
-        System.IAsyncResult BegineliminarItem(decimal IDItem, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BegineliminarItem(decimal IDItem, decimal IDExamen, System.AsyncCallback callback, object asyncState);
         
         bool EndeliminarItem(System.IAsyncResult result);
         
@@ -1545,8 +1545,8 @@ namespace Proyecto.ws {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult Proyecto.ws.wsCentroMedico.BegineliminarItem(decimal IDItem, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BegineliminarItem(IDItem, callback, asyncState);
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BegineliminarItem(decimal IDItem, decimal IDExamen, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegineliminarItem(IDItem, IDExamen, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1556,7 +1556,8 @@ namespace Proyecto.ws {
         
         private System.IAsyncResult OnBegineliminarItem(object[] inValues, System.AsyncCallback callback, object asyncState) {
             decimal IDItem = ((decimal)(inValues[0]));
-            return ((Proyecto.ws.wsCentroMedico)(this)).BegineliminarItem(IDItem, callback, asyncState);
+            decimal IDExamen = ((decimal)(inValues[1]));
+            return ((Proyecto.ws.wsCentroMedico)(this)).BegineliminarItem(IDItem, IDExamen, callback, asyncState);
         }
         
         private object[] OnEndeliminarItem(System.IAsyncResult result) {
@@ -1572,11 +1573,11 @@ namespace Proyecto.ws {
             }
         }
         
-        public void eliminarItemAsync(decimal IDItem) {
-            this.eliminarItemAsync(IDItem, null);
+        public void eliminarItemAsync(decimal IDItem, decimal IDExamen) {
+            this.eliminarItemAsync(IDItem, IDExamen, null);
         }
         
-        public void eliminarItemAsync(decimal IDItem, object userState) {
+        public void eliminarItemAsync(decimal IDItem, decimal IDExamen, object userState) {
             if ((this.onBegineliminarItemDelegate == null)) {
                 this.onBegineliminarItemDelegate = new BeginOperationDelegate(this.OnBegineliminarItem);
             }
@@ -1587,7 +1588,8 @@ namespace Proyecto.ws {
                 this.oneliminarItemCompletedDelegate = new System.Threading.SendOrPostCallback(this.OneliminarItemCompleted);
             }
             base.InvokeAsync(this.onBegineliminarItemDelegate, new object[] {
-                        IDItem}, this.onEndeliminarItemDelegate, this.oneliminarItemCompletedDelegate, userState);
+                        IDItem,
+                        IDExamen}, this.onEndeliminarItemDelegate, this.oneliminarItemCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2284,9 +2286,10 @@ namespace Proyecto.ws {
                 return _result;
             }
             
-            public System.IAsyncResult BegineliminarItem(decimal IDItem, System.AsyncCallback callback, object asyncState) {
-                object[] _args = new object[1];
+            public System.IAsyncResult BegineliminarItem(decimal IDItem, decimal IDExamen, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
                 _args[0] = IDItem;
+                _args[1] = IDExamen;
                 System.IAsyncResult _result = base.BeginInvoke("eliminarItem", _args, callback, asyncState);
                 return _result;
             }

@@ -669,9 +669,9 @@ namespace cnCentroMedico
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LABORATORIO.eliminarItemPorID")]
-		public int eliminarItemPorID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idItem)
+		public int eliminarItemPorID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idItem, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idExamen)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idItem);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idItem, idExamen);
 			return ((int)(result.ReturnValue));
 		}
 	}

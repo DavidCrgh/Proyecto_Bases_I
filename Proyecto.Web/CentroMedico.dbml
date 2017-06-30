@@ -638,6 +638,7 @@
   </Function>
   <Function Name="LABORATORIO.eliminarItemPorID" Method="eliminarItemPorID">
     <Parameter Name="idItem" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <Parameter Name="idExamen" Type="System.Decimal" DbType="Decimal(4,0)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
