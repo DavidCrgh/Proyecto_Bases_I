@@ -161,7 +161,13 @@
     <None Include="Service References\ws\Proyecto.ws.clEmpleadoNI.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ws\Proyecto.ws.clExamen.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ws\Proyecto.ws.clHorario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ws\Proyecto.ws.clItem.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ws\Proyecto.ws.clPacienteCNA.datasource">

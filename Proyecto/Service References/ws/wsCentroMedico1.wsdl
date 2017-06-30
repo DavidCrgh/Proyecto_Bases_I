@@ -26,6 +26,18 @@
   <wsdl:message name="wsCentroMedico_getIDCitas_OutputMessage">
     <wsdl:part name="parameters" element="tns:getIDCitasResponse" />
   </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getExamenes_InputMessage">
+    <wsdl:part name="parameters" element="tns:getExamenes" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getExamenes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getExamenesResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:getItems" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getItemsResponse" />
+  </wsdl:message>
   <wsdl:message name="wsCentroMedico_getCitas_InputMessage">
     <wsdl:part name="parameters" element="tns:getCitas" />
   </wsdl:message>
@@ -80,6 +92,14 @@
     <wsdl:operation name="getIDCitas">
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getIDCitas" message="tns:wsCentroMedico_getIDCitas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getIDCitasResponse" message="tns:wsCentroMedico_getIDCitas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExamenes">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getExamenes" message="tns:wsCentroMedico_getExamenes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getExamenesResponse" message="tns:wsCentroMedico_getExamenes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getItems" message="tns:wsCentroMedico_getItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getItemsResponse" message="tns:wsCentroMedico_getItems_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getCitas">
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getCitas" message="tns:wsCentroMedico_getCitas_InputMessage" />

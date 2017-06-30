@@ -1,13 +1,91 @@
-﻿<navigation:Page x:Class="Proyecto.Views.Examenes" 
+﻿<navigation:Page 
            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-           mc:Ignorable="d"
            xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" x:Class="Proyecto.Views.Examenes"
+           mc:Ignorable="d"
            d:DesignWidth="1200" d:DesignHeight="700"
-           Title="Examenes Page">
+           Title="Examenes">
     <Grid x:Name="LayoutRoot">
+
+        <StackPanel HorizontalAlignment="Left" Height="208" Margin="598,89,0,0" VerticalAlignment="Top" Width="490" Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="114">
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Identificador:"  Visibility="Collapsed"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Nombre:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Descripcion:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="39" VerticalAlignment="Center" Width="100" Content="&#xD;&#xA;&#xD;&#xA;"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Nombre Item:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content="Expresion Regular:"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <sdk:Label HorizontalAlignment="Left" Height="25" VerticalAlignment="Center" Width="100" Content=""/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,25"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Left" Height="200" VerticalAlignment="Top" Width="380">
+                <TextBox x:Name="TB_IDCita" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" MaxLength="20" IsReadOnly="True" Visibility="Collapsed"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <TextBox x:Name="CB_NombreExamen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="370" Height="25"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <TextBox x:Name="TB_Descripcion" HorizontalAlignment="Left" Height="75" TextWrapping="Wrap" VerticalAlignment="Top" Width="370" MaxLength="200"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <TextBox x:Name="CB_NombreItem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="370" Height="25"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <TextBox x:Name="CB_ExpresionRegular" HorizontalAlignment="Left" VerticalAlignment="Top" Width="370" Height="25"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Height="95" Margin="40,153,0,0" VerticalAlignment="Top" Width="360" Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
+                <Button x:Name="BN_InsertarExamen" Content="Insertar nuevo examen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Button x:Name="BN_ActualizarExamen" Content="Actualizar examen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Button x:Name="BN_BorrarExamen" Content="Borrar examen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+            </StackPanel>
+            <Rectangle Style="{StaticResource DividerStyle}" Margin="5,5"/>
+            <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,17.5"/>
+                <ComboBox x:Name="CB_ID_UpdateExamen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <ComboBox x:Name="CB_ID_DeleteExamen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+            </StackPanel>
+
+        </StackPanel>
+
+        <sdk:DataGrid HorizontalAlignment="Left" Height="200" Margin="40,460,0,0" VerticalAlignment="Top" Width="525" Name="DG_Examenes" AutoGenerateColumns="True" IsReadOnly="True"/>
+        <sdk:Label x:Name="label" HorizontalAlignment="Left" Height="47" Margin="40,10,0,643" VerticalAlignment="Center" Width="525" FontSize="36" Content="Mantenimiento de examenes&#xD;&#xA;"/>
+        <StackPanel HorizontalAlignment="Left" Height="95" Margin="40,275,0,0" VerticalAlignment="Top" Width="360" Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
+                <Button x:Name="BN_InsertarItem" Content="Insertar nuevo item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Button x:Name="BN_ActualizarItem" Content="Actualizar item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25"/>
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <Button x:Name="BN_BorrarItem" Content="Borrar item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+            </StackPanel>
+            <Rectangle Style="{StaticResource DividerStyle}" Margin="5,5"/>
+            <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,17.5"/>
+                <ComboBox x:Name="CB_ID_UpdateItem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+                <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
+                <ComboBox x:Name="CB_ID_DeleteItem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+            </StackPanel>
+
+        </StackPanel>
+        <sdk:DataGrid HorizontalAlignment="Left" Height="200" Margin="588,460,0,0" VerticalAlignment="Top" Width="525" x:Name="DG_Items" AutoGenerateColumns="True" IsReadOnly="True"/>
+        <sdk:Label x:Name="label1" HorizontalAlignment="Left" Height="28" Margin="40,427,0,0" VerticalAlignment="Top" Width="120" Content="Examenes"/>
+        <sdk:Label x:Name="label2" HorizontalAlignment="Left" Height="28" Margin="588,427,0,0" VerticalAlignment="Top" Width="120" Content="Items"/>
 
     </Grid>
 </navigation:Page>

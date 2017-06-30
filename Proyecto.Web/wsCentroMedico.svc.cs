@@ -13,6 +13,9 @@ namespace Proyecto.Web
     public class wsCentroMedico
     {
 
+        //[OperationContract]
+        //public v
+
         //Eliminar una cita :(
         [OperationContract]
         public bool eliminarCita(decimal IDCita)
@@ -57,6 +60,40 @@ namespace Proyecto.Web
                 lista.Add(ID.IDCITA);
             }
 
+            return lista;
+        }
+
+        //Obtengo los Examenes
+        [OperationContract]
+        public ObservableCollection<clExamen> getExamenes()
+        {
+            var lista = new ObservableCollection<clExamen>();
+            var dataBase = new dcCentroMedico();
+            var vExamen = dataBase.obtenerExamenes();
+            clExamen tempExamen;
+
+            foreach (var examen in vExamen)
+            {
+                tempExamen = new clExamen(examen.IDExamen, examen.Nombre, examen.Descripcion);
+                lista.Add(tempExamen);
+            }
+            return lista;
+        }
+
+        //Obtengo los items
+        [OperationContract]
+        public ObservableCollection<clItem> getItems()
+        {
+            var lista = new ObservableCollection<clItem>();
+            var dataBase = new dcCentroMedico();
+            var vItem = dataBase.obtenerItems();
+            clItem tempItem;
+
+            foreach (var item in vItem)
+            {
+                tempItem = new clItem(item.IDExamen, item.IDItem, item.Nombre, item.ExpresionRegular);
+                lista.Add(tempItem);
+            }
             return lista;
         }
 

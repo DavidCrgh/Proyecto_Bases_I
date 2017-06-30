@@ -606,4 +606,19 @@
       <Column Name="IDSEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="LABORATORIO.obtenerItems" Method="obtenerItems">
+    <ElementType Name="obtenerItemsResult">
+      <Column Name="IDExamen" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDItem" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ExpresionRegular" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="LABORATORIO.obtenerExamenes" Method="obtenerExamenes">
+    <ElementType Name="obtenerExamenesResult">
+      <Column Name="IDExamen" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
