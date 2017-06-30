@@ -25,6 +25,24 @@ namespace Proyecto.Web
             return true;
         }
 
+        //Eliminar un examen
+        [OperationContract]
+        public bool eliminarExamen(decimal IDExamen)
+        {
+            var dataBase = new dcCentroMedico();
+            dataBase.eliminarExamenPorID(IDExamen);
+            return true;
+        }
+
+        //Eliminar un item
+        [OperationContract]
+        public bool eliminarItem(decimal IDItem)
+        {
+            var dataBase = new dcCentroMedico();
+            dataBase.eliminarItemPorID(IDItem);
+            return true;
+        }
+
         //Ingresar nueva vita
         [OperationContract]
         public bool registrarCita(clCita cita)
@@ -58,6 +76,38 @@ namespace Proyecto.Web
             foreach (var ID in vID)
             {
                 lista.Add(ID.IDCITA);
+            }
+
+            return lista;
+        }
+
+        //Obtengo los IDs de Examenes
+        [OperationContract]
+        public ObservableCollection<decimal> getIDExamenes()
+        {
+            var lista = new ObservableCollection<decimal>();
+            var dataBase = new dcCentroMedico();
+            var vID = dataBase.obtenerIDExamenes();
+
+            foreach (var ID in vID)
+            {
+                lista.Add(ID.IDEXAMEN);
+            }
+
+            return lista;
+        }
+
+        //Obtengo los IDs de Items para un Examen
+        [OperationContract]
+        public ObservableCollection<decimal> getIDItems(decimal IDExamen)
+        {
+            var lista = new ObservableCollection<decimal>();
+            var dataBase = new dcCentroMedico();
+            var vID = dataBase.obtenerIDItems(IDExamen);
+
+            foreach (var ID in vID)
+            {
+                lista.Add(ID.IDITEM);
             }
 
             return lista;

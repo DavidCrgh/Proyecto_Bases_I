@@ -52,14 +52,13 @@
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
                 <Button x:Name="BN_ActualizarExamen" Content="Actualizar examen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25"/>
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
-                <Button x:Name="BN_BorrarExamen" Content="Borrar examen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+                <Button x:Name="BN_BorrarExamen" Content="Borrar examen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_BorrarExamen_Click" />
             </StackPanel>
             <Rectangle Style="{StaticResource DividerStyle}" Margin="5,5"/>
             <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,17.5"/>
-                <ComboBox x:Name="CB_ID_UpdateExamen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+                <ComboBox x:Name="CB_ID_UpdateExamen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" SelectionChanged="CB_ID_UpdateExamen_ItemChanged"/>
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
-                <ComboBox x:Name="CB_ID_DeleteExamen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
             </StackPanel>
 
         </StackPanel>
@@ -79,7 +78,6 @@
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,17.5"/>
                 <ComboBox x:Name="CB_ID_UpdateItem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
-                <ComboBox x:Name="CB_ID_DeleteItem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
             </StackPanel>
 
         </StackPanel>

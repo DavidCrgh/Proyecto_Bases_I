@@ -22,6 +22,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="eliminarExamen">
+      <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/eliminarExamen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarItem">
+      <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/eliminarItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="registrarCita">
       <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/registrarCita" style="document" />
       <wsdl:input>
@@ -33,6 +51,24 @@
     </wsdl:operation>
     <wsdl:operation name="getIDCitas">
       <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/getIDCitas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIDExamenes">
+      <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/getIDExamenes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getIDItems">
+      <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/getIDItems" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

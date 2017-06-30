@@ -16,6 +16,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="eliminarExamen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDExamen" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarExamenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarExamenResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDItem" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarItemResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="registrarCita">
     <xs:complexType>
       <xs:sequence>
@@ -42,6 +70,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getIDExamenes">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getIDExamenesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getIDExamenesResult" nillable="true" type="q3:ArrayOfdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getIDItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IDExamen" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getIDItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getIDItemsResult" nillable="true" type="q4:ArrayOfdecimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="getExamenes">
     <xs:complexType>
       <xs:sequence />
@@ -50,7 +104,7 @@
   <xs:element name="getExamenesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getExamenesResult" nillable="true" type="q3:ArrayOfclExamen" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getExamenesResult" nillable="true" type="q5:ArrayOfclExamen" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -62,7 +116,7 @@
   <xs:element name="getItemsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getItemsResult" nillable="true" type="q4:ArrayOfclItem" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getItemsResult" nillable="true" type="q6:ArrayOfclItem" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -74,7 +128,7 @@
   <xs:element name="getCitasResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCitasResult" nillable="true" type="q5:ArrayOfclCitaForUser" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCitasResult" nillable="true" type="q7:ArrayOfclCitaForUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -86,7 +140,7 @@
   <xs:element name="getPacientesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPacientesResult" nillable="true" type="q6:ArrayOfclPacienteCNA" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getPacientesResult" nillable="true" type="q8:ArrayOfclPacienteCNA" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -100,7 +154,7 @@
   <xs:element name="getMedicosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMedicosResult" nillable="true" type="q7:ArrayOfclEmpleadoANNII" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMedicosResult" nillable="true" type="q9:ArrayOfclEmpleadoANNII" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -112,7 +166,7 @@
   <xs:element name="getMedicosSolosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMedicosSolosResult" nillable="true" type="q8:ArrayOfclEmpleadoNI" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getMedicosSolosResult" nillable="true" type="q10:ArrayOfclEmpleadoNI" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -128,7 +182,7 @@
   <xs:element name="getCitasPorPeriodoMedicoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCitasPorPeriodoMedicoResult" nillable="true" type="q9:ArrayOfclCitaForUser" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getCitasPorPeriodoMedicoResult" nillable="true" type="q11:ArrayOfclCitaForUser" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -140,7 +194,7 @@
   <xs:element name="getSedesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getSedesResult" nillable="true" type="q10:ArrayOfclSede" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getSedesResult" nillable="true" type="q12:ArrayOfclSede" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -157,7 +211,7 @@
   <xs:element name="getHorariosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getHorariosResult" nillable="true" type="q11:ArrayOfclHorario" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/" minOccurs="0" name="getHorariosResult" nillable="true" type="q13:ArrayOfclHorario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

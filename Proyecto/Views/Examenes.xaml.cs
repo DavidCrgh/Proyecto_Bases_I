@@ -31,12 +31,58 @@ namespace Proyecto.Views
             servicio.getExamenesAsync();
             servicio.getItemsCompleted += new EventHandler<ws.getItemsCompletedEventArgs>(cargarItems);
             servicio.getItemsAsync();
+            servicio.getIDExamenesCompleted += new EventHandler<ws.getIDExamenesCompletedEventArgs>(cargarIDExamenes);
+            servicio.getIDExamenesAsync();
+            servicio.getIDItemsCompleted += new EventHandler<ws.getIDItemsCompletedEventArgs>(cargarIDItems);
+            servicio.eliminarExamenCompleted += new EventHandler<ws.eliminarExamenCompletedEventArgs>(eliminarExamen);
         }
 
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
+        }
+
+        //Evento lanzado al finalizar eliminarExamenAsync()
+        public void eliminarExamen(object sender, ws.eliminarExamenCompletedEventArgs e)
+        {
+            servicio.getExamenesAsync();
+            servicio.getItemsAsync();
+            servicio.getIDExamenesAsync();
+        }
+
+        //Evento que se ejecuta luego de que getIDExamenesAsync() obtenga los IDs de examenes de la BD
+        public void cargarIDExamenes(object sender, ws.getIDExamenesCompletedEventArgs e)
+        {
+            IDExamenes = e.Result.ToList();
+            CB_ID_UpdateExamen.Items.Clear();
+            foreach (var ID in IDExamenes)
+            {
+                CB_ID_UpdateExamen.Items.Add(ID);
+            }
+
+            if(IDExamenes.Count > 0)
+            {
+                try
+                {
+                    servicio.getIDItemsAsync(Convert.ToInt32(IDExamenes.First()));
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        //Evento que se ejecuta luego de que getIDItemsAsync() obtenga los IDs de items de la BD
+        public void cargarIDItems(object sender, ws.getIDItemsCompletedEventArgs e)
+        {
+            IDItems = e.Result.ToList();
+            CB_ID_UpdateItem.Items.Clear();
+            foreach (var ID in IDItems)
+            {
+                CB_ID_UpdateItem.Items.Add(ID);
+            }
         }
 
         //Evento que se ejecuta luego de que getExamenesAsync() obtenga los datos de examenes de la BD
@@ -50,6 +96,35 @@ namespace Proyecto.Views
         {
             Items = e.Result.ToList();
             DG_Items.ItemsSource = e.Result;
+        }
+
+        //Se acciona cuando el usuario cambia el elemento seleccionado del ComboBox de sedes
+        public void CB_ID_UpdateExamen_ItemChanged(object sender, EventArgs e)
+        {
+            if (IDExamenes.Count > 0)
+            {
+                try
+                {
+                    decimal idActual = IDExamenes[CB_ID_UpdateExamen.SelectedIndex];
+                    servicio.getIDItemsAsync(Convert.ToInt32(idActual));
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        private void BN_BorrarExamen_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                servicio.eliminarExamenAsync(IDExamenes[CB_ID_UpdateExamen.SelectedIndex]);
+            }
+            catch
+            {
+
+            }
         }
 
         //Inicializa contextos de elementos gráficos
@@ -66,5 +141,6 @@ namespace Proyecto.Views
             //CB_Tipo.SelectedIndex = 0;
         }
 
+        
     }
 }

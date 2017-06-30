@@ -879,6 +879,16 @@ namespace Proyecto.ws {
         
         bool EndeliminarCita(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/eliminarExamen", ReplyAction="http://tempuri.org/wsCentroMedico/eliminarExamenResponse")]
+        System.IAsyncResult BegineliminarExamen(decimal IDExamen, System.AsyncCallback callback, object asyncState);
+        
+        bool EndeliminarExamen(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/eliminarItem", ReplyAction="http://tempuri.org/wsCentroMedico/eliminarItemResponse")]
+        System.IAsyncResult BegineliminarItem(decimal IDItem, System.AsyncCallback callback, object asyncState);
+        
+        bool EndeliminarItem(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/registrarCita", ReplyAction="http://tempuri.org/wsCentroMedico/registrarCitaResponse")]
         System.IAsyncResult BeginregistrarCita(Proyecto.ws.clCita cita, System.AsyncCallback callback, object asyncState);
         
@@ -888,6 +898,16 @@ namespace Proyecto.ws {
         System.IAsyncResult BegingetIDCitas(System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<decimal> EndgetIDCitas(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/getIDExamenes", ReplyAction="http://tempuri.org/wsCentroMedico/getIDExamenesResponse")]
+        System.IAsyncResult BegingetIDExamenes(System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<decimal> EndgetIDExamenes(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/getIDItems", ReplyAction="http://tempuri.org/wsCentroMedico/getIDItemsResponse")]
+        System.IAsyncResult BegingetIDItems(decimal IDExamen, System.AsyncCallback callback, object asyncState);
+        
+        System.Collections.ObjectModel.ObservableCollection<decimal> EndgetIDItems(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/getExamenes", ReplyAction="http://tempuri.org/wsCentroMedico/getExamenesResponse")]
         System.IAsyncResult BegingetExamenes(System.AsyncCallback callback, object asyncState);
@@ -960,6 +980,44 @@ namespace Proyecto.ws {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class eliminarExamenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public eliminarExamenCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class eliminarItemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public eliminarItemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class registrarCitaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -984,6 +1042,44 @@ namespace Proyecto.ws {
         private object[] results;
         
         public getIDCitasCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<decimal> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<decimal>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getIDExamenesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getIDExamenesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public System.Collections.ObjectModel.ObservableCollection<decimal> Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((System.Collections.ObjectModel.ObservableCollection<decimal>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getIDItemsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getIDItemsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -1177,6 +1273,18 @@ namespace Proyecto.ws {
         
         private System.Threading.SendOrPostCallback oneliminarCitaCompletedDelegate;
         
+        private BeginOperationDelegate onBegineliminarExamenDelegate;
+        
+        private EndOperationDelegate onEndeliminarExamenDelegate;
+        
+        private System.Threading.SendOrPostCallback oneliminarExamenCompletedDelegate;
+        
+        private BeginOperationDelegate onBegineliminarItemDelegate;
+        
+        private EndOperationDelegate onEndeliminarItemDelegate;
+        
+        private System.Threading.SendOrPostCallback oneliminarItemCompletedDelegate;
+        
         private BeginOperationDelegate onBeginregistrarCitaDelegate;
         
         private EndOperationDelegate onEndregistrarCitaDelegate;
@@ -1188,6 +1296,18 @@ namespace Proyecto.ws {
         private EndOperationDelegate onEndgetIDCitasDelegate;
         
         private System.Threading.SendOrPostCallback ongetIDCitasCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetIDExamenesDelegate;
+        
+        private EndOperationDelegate onEndgetIDExamenesDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetIDExamenesCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetIDItemsDelegate;
+        
+        private EndOperationDelegate onEndgetIDItemsDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetIDItemsCompletedDelegate;
         
         private BeginOperationDelegate onBegingetExamenesDelegate;
         
@@ -1298,9 +1418,17 @@ namespace Proyecto.ws {
         
         public event System.EventHandler<eliminarCitaCompletedEventArgs> eliminarCitaCompleted;
         
+        public event System.EventHandler<eliminarExamenCompletedEventArgs> eliminarExamenCompleted;
+        
+        public event System.EventHandler<eliminarItemCompletedEventArgs> eliminarItemCompleted;
+        
         public event System.EventHandler<registrarCitaCompletedEventArgs> registrarCitaCompleted;
         
         public event System.EventHandler<getIDCitasCompletedEventArgs> getIDCitasCompleted;
+        
+        public event System.EventHandler<getIDExamenesCompletedEventArgs> getIDExamenesCompleted;
+        
+        public event System.EventHandler<getIDItemsCompletedEventArgs> getIDItemsCompleted;
         
         public event System.EventHandler<getExamenesCompletedEventArgs> getExamenesCompleted;
         
@@ -1368,6 +1496,98 @@ namespace Proyecto.ws {
             }
             base.InvokeAsync(this.onBegineliminarCitaDelegate, new object[] {
                         IDCita}, this.onEndeliminarCitaDelegate, this.oneliminarCitaCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BegineliminarExamen(decimal IDExamen, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegineliminarExamen(IDExamen, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Proyecto.ws.wsCentroMedico.EndeliminarExamen(System.IAsyncResult result) {
+            return base.Channel.EndeliminarExamen(result);
+        }
+        
+        private System.IAsyncResult OnBegineliminarExamen(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            decimal IDExamen = ((decimal)(inValues[0]));
+            return ((Proyecto.ws.wsCentroMedico)(this)).BegineliminarExamen(IDExamen, callback, asyncState);
+        }
+        
+        private object[] OnEndeliminarExamen(System.IAsyncResult result) {
+            bool retVal = ((Proyecto.ws.wsCentroMedico)(this)).EndeliminarExamen(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OneliminarExamenCompleted(object state) {
+            if ((this.eliminarExamenCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.eliminarExamenCompleted(this, new eliminarExamenCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void eliminarExamenAsync(decimal IDExamen) {
+            this.eliminarExamenAsync(IDExamen, null);
+        }
+        
+        public void eliminarExamenAsync(decimal IDExamen, object userState) {
+            if ((this.onBegineliminarExamenDelegate == null)) {
+                this.onBegineliminarExamenDelegate = new BeginOperationDelegate(this.OnBegineliminarExamen);
+            }
+            if ((this.onEndeliminarExamenDelegate == null)) {
+                this.onEndeliminarExamenDelegate = new EndOperationDelegate(this.OnEndeliminarExamen);
+            }
+            if ((this.oneliminarExamenCompletedDelegate == null)) {
+                this.oneliminarExamenCompletedDelegate = new System.Threading.SendOrPostCallback(this.OneliminarExamenCompleted);
+            }
+            base.InvokeAsync(this.onBegineliminarExamenDelegate, new object[] {
+                        IDExamen}, this.onEndeliminarExamenDelegate, this.oneliminarExamenCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BegineliminarItem(decimal IDItem, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegineliminarItem(IDItem, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Proyecto.ws.wsCentroMedico.EndeliminarItem(System.IAsyncResult result) {
+            return base.Channel.EndeliminarItem(result);
+        }
+        
+        private System.IAsyncResult OnBegineliminarItem(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            decimal IDItem = ((decimal)(inValues[0]));
+            return ((Proyecto.ws.wsCentroMedico)(this)).BegineliminarItem(IDItem, callback, asyncState);
+        }
+        
+        private object[] OnEndeliminarItem(System.IAsyncResult result) {
+            bool retVal = ((Proyecto.ws.wsCentroMedico)(this)).EndeliminarItem(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OneliminarItemCompleted(object state) {
+            if ((this.eliminarItemCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.eliminarItemCompleted(this, new eliminarItemCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void eliminarItemAsync(decimal IDItem) {
+            this.eliminarItemAsync(IDItem, null);
+        }
+        
+        public void eliminarItemAsync(decimal IDItem, object userState) {
+            if ((this.onBegineliminarItemDelegate == null)) {
+                this.onBegineliminarItemDelegate = new BeginOperationDelegate(this.OnBegineliminarItem);
+            }
+            if ((this.onEndeliminarItemDelegate == null)) {
+                this.onEndeliminarItemDelegate = new EndOperationDelegate(this.OnEndeliminarItem);
+            }
+            if ((this.oneliminarItemCompletedDelegate == null)) {
+                this.oneliminarItemCompletedDelegate = new System.Threading.SendOrPostCallback(this.OneliminarItemCompleted);
+            }
+            base.InvokeAsync(this.onBegineliminarItemDelegate, new object[] {
+                        IDItem}, this.onEndeliminarItemDelegate, this.oneliminarItemCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1458,6 +1678,96 @@ namespace Proyecto.ws {
                 this.ongetIDCitasCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetIDCitasCompleted);
             }
             base.InvokeAsync(this.onBegingetIDCitasDelegate, null, this.onEndgetIDCitasDelegate, this.ongetIDCitasCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BegingetIDExamenes(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetIDExamenes(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<decimal> Proyecto.ws.wsCentroMedico.EndgetIDExamenes(System.IAsyncResult result) {
+            return base.Channel.EndgetIDExamenes(result);
+        }
+        
+        private System.IAsyncResult OnBegingetIDExamenes(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return ((Proyecto.ws.wsCentroMedico)(this)).BegingetIDExamenes(callback, asyncState);
+        }
+        
+        private object[] OnEndgetIDExamenes(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<decimal> retVal = ((Proyecto.ws.wsCentroMedico)(this)).EndgetIDExamenes(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetIDExamenesCompleted(object state) {
+            if ((this.getIDExamenesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getIDExamenesCompleted(this, new getIDExamenesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getIDExamenesAsync() {
+            this.getIDExamenesAsync(null);
+        }
+        
+        public void getIDExamenesAsync(object userState) {
+            if ((this.onBegingetIDExamenesDelegate == null)) {
+                this.onBegingetIDExamenesDelegate = new BeginOperationDelegate(this.OnBegingetIDExamenes);
+            }
+            if ((this.onEndgetIDExamenesDelegate == null)) {
+                this.onEndgetIDExamenesDelegate = new EndOperationDelegate(this.OnEndgetIDExamenes);
+            }
+            if ((this.ongetIDExamenesCompletedDelegate == null)) {
+                this.ongetIDExamenesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetIDExamenesCompleted);
+            }
+            base.InvokeAsync(this.onBegingetIDExamenesDelegate, null, this.onEndgetIDExamenesDelegate, this.ongetIDExamenesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BegingetIDItems(decimal IDExamen, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetIDItems(IDExamen, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Collections.ObjectModel.ObservableCollection<decimal> Proyecto.ws.wsCentroMedico.EndgetIDItems(System.IAsyncResult result) {
+            return base.Channel.EndgetIDItems(result);
+        }
+        
+        private System.IAsyncResult OnBegingetIDItems(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            decimal IDExamen = ((decimal)(inValues[0]));
+            return ((Proyecto.ws.wsCentroMedico)(this)).BegingetIDItems(IDExamen, callback, asyncState);
+        }
+        
+        private object[] OnEndgetIDItems(System.IAsyncResult result) {
+            System.Collections.ObjectModel.ObservableCollection<decimal> retVal = ((Proyecto.ws.wsCentroMedico)(this)).EndgetIDItems(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetIDItemsCompleted(object state) {
+            if ((this.getIDItemsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getIDItemsCompleted(this, new getIDItemsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getIDItemsAsync(decimal IDExamen) {
+            this.getIDItemsAsync(IDExamen, null);
+        }
+        
+        public void getIDItemsAsync(decimal IDExamen, object userState) {
+            if ((this.onBegingetIDItemsDelegate == null)) {
+                this.onBegingetIDItemsDelegate = new BeginOperationDelegate(this.OnBegingetIDItems);
+            }
+            if ((this.onEndgetIDItemsDelegate == null)) {
+                this.onEndgetIDItemsDelegate = new EndOperationDelegate(this.OnEndgetIDItems);
+            }
+            if ((this.ongetIDItemsCompletedDelegate == null)) {
+                this.ongetIDItemsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetIDItemsCompleted);
+            }
+            base.InvokeAsync(this.onBegingetIDItemsDelegate, new object[] {
+                        IDExamen}, this.onEndgetIDItemsDelegate, this.ongetIDItemsCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1961,6 +2271,32 @@ namespace Proyecto.ws {
                 return _result;
             }
             
+            public System.IAsyncResult BegineliminarExamen(decimal IDExamen, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = IDExamen;
+                System.IAsyncResult _result = base.BeginInvoke("eliminarExamen", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndeliminarExamen(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("eliminarExamen", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BegineliminarItem(decimal IDItem, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = IDItem;
+                System.IAsyncResult _result = base.BeginInvoke("eliminarItem", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndeliminarItem(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("eliminarItem", _args, result)));
+                return _result;
+            }
+            
             public System.IAsyncResult BeginregistrarCita(Proyecto.ws.clCita cita, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = cita;
@@ -1983,6 +2319,31 @@ namespace Proyecto.ws {
             public System.Collections.ObjectModel.ObservableCollection<decimal> EndgetIDCitas(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<decimal> _result = ((System.Collections.ObjectModel.ObservableCollection<decimal>)(base.EndInvoke("getIDCitas", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BegingetIDExamenes(System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[0];
+                System.IAsyncResult _result = base.BeginInvoke("getIDExamenes", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<decimal> EndgetIDExamenes(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<decimal> _result = ((System.Collections.ObjectModel.ObservableCollection<decimal>)(base.EndInvoke("getIDExamenes", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BegingetIDItems(decimal IDExamen, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = IDExamen;
+                System.IAsyncResult _result = base.BeginInvoke("getIDItems", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public System.Collections.ObjectModel.ObservableCollection<decimal> EndgetIDItems(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                System.Collections.ObjectModel.ObservableCollection<decimal> _result = ((System.Collections.ObjectModel.ObservableCollection<decimal>)(base.EndInvoke("getIDItems", _args, result)));
                 return _result;
             }
             

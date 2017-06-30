@@ -646,6 +646,34 @@ namespace cnCentroMedico
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<enCentroMedico.obtenerExamenesResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LABORATORIO.obtenerIDItems")]
+		public ISingleResult<enCentroMedico.obtenerIDItemsResult> obtenerIDItems([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idExamen)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idExamen);
+			return ((ISingleResult<enCentroMedico.obtenerIDItemsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LABORATORIO.obtenerIDExamenes")]
+		public ISingleResult<enCentroMedico.obtenerIDExamenesResult> obtenerIDExamenes()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<enCentroMedico.obtenerIDExamenesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LABORATORIO.eliminarExamenPorID")]
+		public int eliminarExamenPorID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idExamen)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idExamen);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LABORATORIO.eliminarItemPorID")]
+		public int eliminarItemPorID([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idItem)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idItem);
+			return ((int)(result.ReturnValue));
+		}
 	}
 }
 namespace enCentroMedico
@@ -10885,6 +10913,58 @@ namespace enCentroMedico
 				if ((this._Descripcion != value))
 				{
 					this._Descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class obtenerIDItemsResult
+	{
+		
+		private decimal _IDITEM;
+		
+		public obtenerIDItemsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDITEM", DbType="Decimal(4,0) NOT NULL")]
+		public decimal IDITEM
+		{
+			get
+			{
+				return this._IDITEM;
+			}
+			set
+			{
+				if ((this._IDITEM != value))
+				{
+					this._IDITEM = value;
+				}
+			}
+		}
+	}
+	
+	public partial class obtenerIDExamenesResult
+	{
+		
+		private decimal _IDEXAMEN;
+		
+		public obtenerIDExamenesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDEXAMEN", DbType="Decimal(4,0) NOT NULL")]
+		public decimal IDEXAMEN
+		{
+			get
+			{
+				return this._IDEXAMEN;
+			}
+			set
+			{
+				if ((this._IDEXAMEN != value))
+				{
+					this._IDEXAMEN = value;
 				}
 			}
 		}

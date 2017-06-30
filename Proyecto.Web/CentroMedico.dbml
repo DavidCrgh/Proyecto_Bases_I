@@ -621,4 +621,23 @@
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="LABORATORIO.obtenerIDItems" Method="obtenerIDItems">
+    <Parameter Name="idExamen" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <ElementType Name="obtenerIDItemsResult">
+      <Column Name="IDITEM" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="LABORATORIO.obtenerIDExamenes" Method="obtenerIDExamenes">
+    <ElementType Name="obtenerIDExamenesResult">
+      <Column Name="IDEXAMEN" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="LABORATORIO.eliminarExamenPorID" Method="eliminarExamenPorID">
+    <Parameter Name="idExamen" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="LABORATORIO.eliminarItemPorID" Method="eliminarItemPorID">
+    <Parameter Name="idItem" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>
