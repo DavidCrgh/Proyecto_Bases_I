@@ -16,12 +16,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="clCita" nillable="true" type="tns:clCita" />
-  <xs:complexType name="ArrayOfclExamen">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="clExamen" nillable="true" type="tns:clExamen" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfclExamen" nillable="true" type="tns:ArrayOfclExamen" />
   <xs:complexType name="clExamen">
     <xs:sequence>
       <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
@@ -45,6 +39,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="clItem" nillable="true" type="tns:clItem" />
+  <xs:complexType name="ArrayOfclExamen">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="clExamen" nillable="true" type="tns:clExamen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfclExamen" nillable="true" type="tns:ArrayOfclExamen" />
   <xs:complexType name="ArrayOfclCitaForUser">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="clCitaForUser" nillable="true" type="tns:clCitaForUser" />

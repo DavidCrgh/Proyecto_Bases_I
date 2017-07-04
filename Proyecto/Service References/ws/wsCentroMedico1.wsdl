@@ -32,6 +32,12 @@
   <wsdl:message name="wsCentroMedico_registrarCita_OutputMessage">
     <wsdl:part name="parameters" element="tns:registrarCitaResponse" />
   </wsdl:message>
+  <wsdl:message name="wsCentroMedico_registrarExamenItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:registrarExamenItems" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_registrarExamenItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registrarExamenItemsResponse" />
+  </wsdl:message>
   <wsdl:message name="wsCentroMedico_getIDCitas_InputMessage">
     <wsdl:part name="parameters" element="tns:getIDCitas" />
   </wsdl:message>
@@ -120,6 +126,10 @@
     <wsdl:operation name="registrarCita">
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/registrarCita" message="tns:wsCentroMedico_registrarCita_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/registrarCitaResponse" message="tns:wsCentroMedico_registrarCita_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registrarExamenItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/registrarExamenItems" message="tns:wsCentroMedico_registrarExamenItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/registrarExamenItemsResponse" message="tns:wsCentroMedico_registrarExamenItems_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getIDCitas">
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getIDCitas" message="tns:wsCentroMedico_getIDCitas_InputMessage" />

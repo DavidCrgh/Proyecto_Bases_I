@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Activation;
@@ -60,9 +61,54 @@ namespace Proyecto.Web
             tempCita.ESTADO = cita.Estado[0];
             tempCita.IDFACTURA = cita.IDFactura;
             var dataBase = new dcCentroMedico();
+            //dataBase.Connection.BeginTransaction()
             dataBase.CITAs.InsertOnSubmit(tempCita);
             dataBase.SubmitChanges();
             return true;
+        }
+
+        //Registrar examen con sus items
+        [OperationContract]
+        public bool registrarExamenItems(clExamen examen, List<clItem> items)
+        {
+            var dataBase = new dcCentroMedico();
+            dataBase.Connection.Open();
+
+            using (dataBase.Transaction = dataBase.Connection.BeginTransaction())
+            {
+                try
+                {
+                    enCentroMedico.EXAMEN tempExamen = new enCentroMedico.EXAMEN();
+                    tempExamen.IDEXAMEN = examen.IDExamen;
+                    tempExamen.NOMBRE = examen.Nombre;
+                    tempExamen.DESCRIPCION = examen.Descripcion;
+                    dataBase.EXAMENs.InsertOnSubmit(tempExamen);
+                    dataBase.SubmitChanges();
+
+                    foreach (var item in items)
+                    {
+                        enCentroMedico.ITEM tempItem = new enCentroMedico.ITEM();
+                        tempItem.IDEXAMEN = examen.IDExamen;
+                        tempItem.IDITEM = item.IDItem;
+                        tempItem.NOMBRE = item.Nombre;
+                        tempItem.EXPRESIONREGULAR = item.ExpresionRegular;
+                        dataBase.ITEMs.InsertOnSubmit(tempItem);
+                    }
+
+                    dataBase.SubmitChanges();
+                    dataBase.Transaction.Commit();
+                    dataBase.Connection.Close();
+                    Console.WriteLine("Exitoso");
+                    return true;
+                }
+                catch
+                {
+                    dataBase.Transaction.Rollback();
+                    dataBase.Connection.Close();
+                    Console.WriteLine("Fallido");
+                    return false;
+                }
+            }
         }
 
         //Obtengo los IDs de citas

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Windows;
@@ -20,6 +21,9 @@ namespace Proyecto.Views
         List<ws.clItem> Items = null;
         List<decimal> IDExamenes = null;
         List<decimal> IDItems = null;
+        bool modoCreacion = false;
+        ws.clExamen ExamenPorInsertar = null;
+        List<ws.clItem> ItemsPorInsertar = new List<ws.clItem>();
 
 
 
@@ -36,12 +40,21 @@ namespace Proyecto.Views
             servicio.getIDItemsCompleted += new EventHandler<ws.getIDItemsCompletedEventArgs>(cargarIDItems);
             servicio.eliminarExamenCompleted += new EventHandler<ws.eliminarExamenCompletedEventArgs>(eliminarExamen);
             servicio.eliminarItemCompleted += new EventHandler<ws.eliminarItemCompletedEventArgs>(eliminarItem);
+            servicio.registrarExamenItemsCompleted += new EventHandler<ws.registrarExamenItemsCompletedEventArgs>(registrarExamen);
         }
 
         // Executes when the user navigates to this page.
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
+        }
+
+        //Evento lanzado al finalizar registrarExamenItemAsync()
+        public void registrarExamen(object sender, ws.registrarExamenItemsCompletedEventArgs e)
+        {
+            servicio.getExamenesAsync();
+            servicio.getItemsAsync();
+            servicio.getIDExamenesAsync();
         }
 
         //Evento lanzado al finalizar eliminarExamenAsync()
@@ -163,6 +176,62 @@ namespace Proyecto.Views
             //CB_Tipo.SelectedIndex = 0;
         }
 
-        
+        private void BN_InsertarExamen_Click(object sender, RoutedEventArgs e)
+        {
+            if (modoCreacion)
+            {
+                //Lo que sucede cuando se va a confirmar la insercion del examen con sus items
+                ObservableCollection<ws.clItem> coleccion = new ObservableCollection<ws.clItem>(ItemsPorInsertar);
+                servicio.registrarExamenItemsAsync(ExamenPorInsertar, coleccion);
+                modoCreacion = false;
+                BN_Cancelar_Insercion.Visibility = Visibility.Collapsed;
+                BN_InsertarExamen.Content = "Insertar nuevo examen";
+
+
+                return;
+            }
+            //Lo que sucede cuando se desea iniciar el proceso de insercion de un examen con sus items
+            modoCreacion = true;
+            BN_Cancelar_Insercion.Visibility = Visibility.Visible;
+            BN_InsertarExamen.Content = "Aceptar";
+
+            ExamenPorInsertar = new ws.clExamen();
+            ExamenPorInsertar.IDExamen = IDExamenes.Last() + 1;
+            ExamenPorInsertar.Nombre = TB_NombreExamen.Text + " ";
+            ExamenPorInsertar.Descripcion = TB_Descripcion.Text + " ";
+            ItemsPorInsertar.Clear();
+        }
+
+        private void BN_Cancelar_Insercion_Click(object sender, RoutedEventArgs e)
+        {
+            modoCreacion = false;
+            BN_Cancelar_Insercion.Visibility = Visibility.Collapsed;
+            BN_InsertarExamen.Content = "Insertar nuevo examen";
+        }
+
+        private void BN_InsertarItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (modoCreacion)
+            {
+                //Para insertar un item de un examen todavia no existente
+                ws.clItem tmp = new ws.clItem();
+                tmp.IDExamen = ExamenPorInsertar.IDExamen;
+                if(ItemsPorInsertar.Count > 0)
+                {
+                    tmp.IDItem = ItemsPorInsertar.Last().IDItem + 1;
+                }else
+                {
+                    tmp.IDItem = 1;
+                }
+                tmp.Nombre = TB_NombreItem.Text + " ";
+                tmp.ExpresionRegular = TB_ExpresionRegular.Text + " ";
+
+                ItemsPorInsertar.Add(tmp);
+
+                return;
+            }
+            //Para insertar un item de un examen ya existente
+
+        }
     }
 }

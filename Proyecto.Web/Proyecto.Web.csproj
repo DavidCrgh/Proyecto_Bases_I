@@ -74,6 +74,9 @@
     <Content Include="wsCentroMedico.svc" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CentroMedico.cs">
+      <DependentUpon>CentroMedico.dbml</DependentUpon>
+    </Compile>
     <Compile Include="CentroMedico.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
