@@ -674,6 +674,34 @@ namespace cnCentroMedico
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idItem, idExamen);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LABORATORIO.obtenerExamen")]
+		public ISingleResult<enCentroMedico.obtenerExamenResult> obtenerExamen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idExamen)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idExamen);
+			return ((ISingleResult<enCentroMedico.obtenerExamenResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LABORATORIO.obtenerItem")]
+		public ISingleResult<enCentroMedico.obtenerItemResult> obtenerItem([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idExamen, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idItem)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idExamen, idItem);
+			return ((ISingleResult<enCentroMedico.obtenerItemResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LABORATORIO.actualizarItem")]
+		public int actualizarItem([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idExamen, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idItem, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string expresion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idExamen, idItem, nombre, expresion);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="LABORATORIO.actualizarExamen")]
+		public int actualizarExamen([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(4,0)")] System.Nullable<decimal> idExamen, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(60)")] string desc)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idExamen, nombre, desc);
+			return ((int)(result.ReturnValue));
+		}
 	}
 }
 namespace enCentroMedico
@@ -10965,6 +10993,148 @@ namespace enCentroMedico
 				if ((this._IDEXAMEN != value))
 				{
 					this._IDEXAMEN = value;
+				}
+			}
+		}
+	}
+	
+	public partial class obtenerExamenResult
+	{
+		
+		private decimal _IDExamen;
+		
+		private string _Nombre;
+		
+		private string _Descripcion;
+		
+		public obtenerExamenResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDExamen", DbType="Decimal(4,0) NOT NULL")]
+		public decimal IDExamen
+		{
+			get
+			{
+				return this._IDExamen;
+			}
+			set
+			{
+				if ((this._IDExamen != value))
+				{
+					this._IDExamen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(60) NOT NULL", CanBeNull=false)]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this._Descripcion = value;
+				}
+			}
+		}
+	}
+	
+	public partial class obtenerItemResult
+	{
+		
+		private decimal _IDExamen;
+		
+		private decimal _IDItem;
+		
+		private string _Nombre;
+		
+		private string _ExpresionRegular;
+		
+		public obtenerItemResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDExamen", DbType="Decimal(4,0) NOT NULL")]
+		public decimal IDExamen
+		{
+			get
+			{
+				return this._IDExamen;
+			}
+			set
+			{
+				if ((this._IDExamen != value))
+				{
+					this._IDExamen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDItem", DbType="Decimal(4,0) NOT NULL")]
+		public decimal IDItem
+		{
+			get
+			{
+				return this._IDItem;
+			}
+			set
+			{
+				if ((this._IDItem != value))
+				{
+					this._IDItem = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(20)")]
+		public string Nombre
+		{
+			get
+			{
+				return this._Nombre;
+			}
+			set
+			{
+				if ((this._Nombre != value))
+				{
+					this._Nombre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExpresionRegular", DbType="VarChar(60)")]
+		public string ExpresionRegular
+		{
+			get
+			{
+				return this._ExpresionRegular;
+			}
+			set
+			{
+				if ((this._ExpresionRegular != value))
+				{
+					this._ExpresionRegular = value;
 				}
 			}
 		}

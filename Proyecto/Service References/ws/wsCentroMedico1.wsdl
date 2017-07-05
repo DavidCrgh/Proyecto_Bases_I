@@ -8,6 +8,18 @@
       <xsd:import schemaLocation="http://localhost:53564/wsCentroMedico.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="wsCentroMedico_actualizarExamen_InputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarExamen" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_actualizarExamen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarExamenResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_actualizarItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarItem" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_actualizarItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:actualizarItemResponse" />
+  </wsdl:message>
   <wsdl:message name="wsCentroMedico_eliminarCita_InputMessage">
     <wsdl:part name="parameters" element="tns:eliminarCita" />
   </wsdl:message>
@@ -38,6 +50,12 @@
   <wsdl:message name="wsCentroMedico_registrarExamenItems_OutputMessage">
     <wsdl:part name="parameters" element="tns:registrarExamenItemsResponse" />
   </wsdl:message>
+  <wsdl:message name="wsCentroMedico_registrarItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:registrarItem" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_registrarItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registrarItemResponse" />
+  </wsdl:message>
   <wsdl:message name="wsCentroMedico_getIDCitas_InputMessage">
     <wsdl:part name="parameters" element="tns:getIDCitas" />
   </wsdl:message>
@@ -61,6 +79,18 @@
   </wsdl:message>
   <wsdl:message name="wsCentroMedico_getExamenes_OutputMessage">
     <wsdl:part name="parameters" element="tns:getExamenesResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getExamen_InputMessage">
+    <wsdl:part name="parameters" element="tns:getExamen" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getExamen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getExamenResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:getItem" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getItemResponse" />
   </wsdl:message>
   <wsdl:message name="wsCentroMedico_getItems_InputMessage">
     <wsdl:part name="parameters" element="tns:getItems" />
@@ -111,6 +141,14 @@
     <wsdl:part name="parameters" element="tns:getHorariosResponse" />
   </wsdl:message>
   <wsdl:portType name="wsCentroMedico">
+    <wsdl:operation name="actualizarExamen">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/actualizarExamen" message="tns:wsCentroMedico_actualizarExamen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/actualizarExamenResponse" message="tns:wsCentroMedico_actualizarExamen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/actualizarItem" message="tns:wsCentroMedico_actualizarItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/actualizarItemResponse" message="tns:wsCentroMedico_actualizarItem_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="eliminarCita">
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/eliminarCita" message="tns:wsCentroMedico_eliminarCita_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/eliminarCitaResponse" message="tns:wsCentroMedico_eliminarCita_OutputMessage" />
@@ -131,6 +169,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/registrarExamenItems" message="tns:wsCentroMedico_registrarExamenItems_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/registrarExamenItemsResponse" message="tns:wsCentroMedico_registrarExamenItems_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="registrarItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/registrarItem" message="tns:wsCentroMedico_registrarItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/registrarItemResponse" message="tns:wsCentroMedico_registrarItem_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getIDCitas">
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getIDCitas" message="tns:wsCentroMedico_getIDCitas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getIDCitasResponse" message="tns:wsCentroMedico_getIDCitas_OutputMessage" />
@@ -146,6 +188,14 @@
     <wsdl:operation name="getExamenes">
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getExamenes" message="tns:wsCentroMedico_getExamenes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getExamenesResponse" message="tns:wsCentroMedico_getExamenes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getExamen">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getExamen" message="tns:wsCentroMedico_getExamen_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getExamenResponse" message="tns:wsCentroMedico_getExamen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getItem" message="tns:wsCentroMedico_getItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getItemResponse" message="tns:wsCentroMedico_getItem_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getItems">
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getItems" message="tns:wsCentroMedico_getItems_InputMessage" />

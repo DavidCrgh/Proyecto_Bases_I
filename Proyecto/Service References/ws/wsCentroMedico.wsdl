@@ -13,6 +13,24 @@
   <wsdl:binding name="CustomBinding_wsCentroMedico" type="i0:wsCentroMedico">
     <wsp:PolicyReference URI="#CustomBinding_wsCentroMedico_policy" />
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="actualizarExamen">
+      <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/actualizarExamen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarItem">
+      <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/actualizarItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="eliminarCita">
       <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/eliminarCita" style="document" />
       <wsdl:input>
@@ -58,6 +76,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="registrarItem">
+      <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/registrarItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getIDCitas">
       <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/getIDCitas" style="document" />
       <wsdl:input>
@@ -87,6 +114,24 @@
     </wsdl:operation>
     <wsdl:operation name="getExamenes">
       <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/getExamenes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExamen">
+      <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/getExamen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItem">
+      <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/getItem" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -641,4 +641,35 @@
     <Parameter Name="idExamen" Type="System.Decimal" DbType="Decimal(4,0)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="LABORATORIO.obtenerExamen" Method="obtenerExamen">
+    <Parameter Name="idExamen" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <ElementType Name="obtenerExamenResult">
+      <Column Name="IDExamen" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="LABORATORIO.obtenerItem" Method="obtenerItem">
+    <Parameter Name="idExamen" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <Parameter Name="idItem" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <ElementType Name="obtenerItemResult">
+      <Column Name="IDExamen" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IDItem" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ExpresionRegular" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="LABORATORIO.actualizarItem" Method="actualizarItem">
+    <Parameter Name="idExamen" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <Parameter Name="idItem" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="expresion" Type="System.String" DbType="VarChar(60)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="LABORATORIO.actualizarExamen" Method="actualizarExamen">
+    <Parameter Name="idExamen" Type="System.Decimal" DbType="Decimal(4,0)" />
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="desc" Type="System.String" DbType="VarChar(60)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

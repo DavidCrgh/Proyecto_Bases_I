@@ -14,8 +14,23 @@ namespace Proyecto.Web
     public class wsCentroMedico
     {
 
-        //[OperationContract]
-        //public v
+        //Actualizar un examen
+        [OperationContract]
+        public bool actualizarExamen(clExamen examen)
+        {
+            var dataBase = new dcCentroMedico();
+            dataBase.actualizarExamen(examen.IDExamen, examen.Nombre, examen.Descripcion);
+            return true;
+        }
+
+        //Actualizar un item
+        [OperationContract]
+        public bool actualizarItem(clItem item)
+        {
+            var dataBase = new dcCentroMedico();
+            dataBase.actualizarItem(item.IDExamen, item.IDItem, item.Nombre, item.ExpresionRegular);
+            return true;
+        }
 
         //Eliminar una cita :(
         [OperationContract]
@@ -111,6 +126,21 @@ namespace Proyecto.Web
             }
         }
 
+        //Registrar un item solo
+        [OperationContract]
+        public bool registrarItem(clItem item)
+        {
+            enCentroMedico.ITEM tempItem = new enCentroMedico.ITEM();
+            tempItem.IDEXAMEN = item.IDExamen;
+            tempItem.IDITEM = item.IDItem;
+            tempItem.NOMBRE = item.Nombre;
+            tempItem.EXPRESIONREGULAR = item.ExpresionRegular;
+            var dataBase = new dcCentroMedico();
+            dataBase.ITEMs.InsertOnSubmit(tempItem);
+            dataBase.SubmitChanges();
+            return true;
+        }
+
         //Obtengo los IDs de citas
         [OperationContract]
         public ObservableCollection<decimal> getIDCitas()
@@ -174,6 +204,26 @@ namespace Proyecto.Web
                 lista.Add(tempExamen);
             }
             return lista;
+        }
+
+        //Se obtiene un solo examen dado
+        [OperationContract]
+        public clExamen getExamen(decimal idExamen)
+        {
+            var dataBase = new dcCentroMedico();
+            var vExamen = dataBase.obtenerExamen(idExamen).First();
+            clExamen tempExamen = new clExamen(vExamen.IDExamen, vExamen.Nombre, vExamen.Descripcion);
+            return tempExamen;
+        }
+
+        //Se obtiene un solo item dado
+        [OperationContract]
+        public clItem getItem(decimal idExamen, decimal idItem)
+        {
+            var dataBase = new dcCentroMedico();
+            var vItem = dataBase.obtenerItem(idExamen, idItem).First();
+            clItem tempItem = new clItem(vItem.IDExamen, vItem.IDItem, vItem.Nombre, vItem.ExpresionRegular);
+            return tempItem;
         }
 
         //Obtengo los items

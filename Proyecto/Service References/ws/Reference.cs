@@ -17,6 +17,141 @@ namespace Proyecto.ws {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="clExamen", Namespace="http://schemas.datacontract.org/2004/07/")]
+    public partial class clExamen : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string DescripcionField;
+        
+        private decimal IDExamenField;
+        
+        private string NombreField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Descripcion {
+            get {
+                return this.DescripcionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
+                    this.DescripcionField = value;
+                    this.RaisePropertyChanged("Descripcion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal IDExamen {
+            get {
+                return this.IDExamenField;
+            }
+            set {
+                if ((this.IDExamenField.Equals(value) != true)) {
+                    this.IDExamenField = value;
+                    this.RaisePropertyChanged("IDExamen");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="clItem", Namespace="http://schemas.datacontract.org/2004/07/")]
+    public partial class clItem : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string ExpresionRegularField;
+        
+        private decimal IDExamenField;
+        
+        private decimal IDItemField;
+        
+        private string NombreField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ExpresionRegular {
+            get {
+                return this.ExpresionRegularField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpresionRegularField, value) != true)) {
+                    this.ExpresionRegularField = value;
+                    this.RaisePropertyChanged("ExpresionRegular");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal IDExamen {
+            get {
+                return this.IDExamenField;
+            }
+            set {
+                if ((this.IDExamenField.Equals(value) != true)) {
+                    this.IDExamenField = value;
+                    this.RaisePropertyChanged("IDExamen");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal IDItem {
+            get {
+                return this.IDItemField;
+            }
+            set {
+                if ((this.IDItemField.Equals(value) != true)) {
+                    this.IDItemField = value;
+                    this.RaisePropertyChanged("IDItem");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Nombre {
+            get {
+                return this.NombreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
+                    this.NombreField = value;
+                    this.RaisePropertyChanged("Nombre");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="clCita", Namespace="http://schemas.datacontract.org/2004/07/")]
     public partial class clCita : object, System.ComponentModel.INotifyPropertyChanged {
         
@@ -181,141 +316,6 @@ namespace Proyecto.ws {
                 if ((this.SedeField.Equals(value) != true)) {
                     this.SedeField = value;
                     this.RaisePropertyChanged("Sede");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="clExamen", Namespace="http://schemas.datacontract.org/2004/07/")]
-    public partial class clExamen : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string DescripcionField;
-        
-        private decimal IDExamenField;
-        
-        private string NombreField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Descripcion {
-            get {
-                return this.DescripcionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescripcionField, value) != true)) {
-                    this.DescripcionField = value;
-                    this.RaisePropertyChanged("Descripcion");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal IDExamen {
-            get {
-                return this.IDExamenField;
-            }
-            set {
-                if ((this.IDExamenField.Equals(value) != true)) {
-                    this.IDExamenField = value;
-                    this.RaisePropertyChanged("IDExamen");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nombre {
-            get {
-                return this.NombreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
-                    this.NombreField = value;
-                    this.RaisePropertyChanged("Nombre");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="clItem", Namespace="http://schemas.datacontract.org/2004/07/")]
-    public partial class clItem : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string ExpresionRegularField;
-        
-        private decimal IDExamenField;
-        
-        private decimal IDItemField;
-        
-        private string NombreField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ExpresionRegular {
-            get {
-                return this.ExpresionRegularField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpresionRegularField, value) != true)) {
-                    this.ExpresionRegularField = value;
-                    this.RaisePropertyChanged("ExpresionRegular");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal IDExamen {
-            get {
-                return this.IDExamenField;
-            }
-            set {
-                if ((this.IDExamenField.Equals(value) != true)) {
-                    this.IDExamenField = value;
-                    this.RaisePropertyChanged("IDExamen");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal IDItem {
-            get {
-                return this.IDItemField;
-            }
-            set {
-                if ((this.IDItemField.Equals(value) != true)) {
-                    this.IDItemField = value;
-                    this.RaisePropertyChanged("IDItem");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Nombre {
-            get {
-                return this.NombreField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NombreField, value) != true)) {
-                    this.NombreField = value;
-                    this.RaisePropertyChanged("Nombre");
                 }
             }
         }
@@ -874,6 +874,16 @@ namespace Proyecto.ws {
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://tempuri.org", ConfigurationName="ws.wsCentroMedico")]
     public interface wsCentroMedico {
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/actualizarExamen", ReplyAction="http://tempuri.org/wsCentroMedico/actualizarExamenResponse")]
+        System.IAsyncResult BeginactualizarExamen(Proyecto.ws.clExamen examen, System.AsyncCallback callback, object asyncState);
+        
+        bool EndactualizarExamen(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/actualizarItem", ReplyAction="http://tempuri.org/wsCentroMedico/actualizarItemResponse")]
+        System.IAsyncResult BeginactualizarItem(Proyecto.ws.clItem item, System.AsyncCallback callback, object asyncState);
+        
+        bool EndactualizarItem(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/eliminarCita", ReplyAction="http://tempuri.org/wsCentroMedico/eliminarCitaResponse")]
         System.IAsyncResult BegineliminarCita(decimal IDCita, System.AsyncCallback callback, object asyncState);
         
@@ -899,6 +909,11 @@ namespace Proyecto.ws {
         
         bool EndregistrarExamenItems(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/registrarItem", ReplyAction="http://tempuri.org/wsCentroMedico/registrarItemResponse")]
+        System.IAsyncResult BeginregistrarItem(Proyecto.ws.clItem item, System.AsyncCallback callback, object asyncState);
+        
+        bool EndregistrarItem(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/getIDCitas", ReplyAction="http://tempuri.org/wsCentroMedico/getIDCitasResponse")]
         System.IAsyncResult BegingetIDCitas(System.AsyncCallback callback, object asyncState);
         
@@ -918,6 +933,16 @@ namespace Proyecto.ws {
         System.IAsyncResult BegingetExamenes(System.AsyncCallback callback, object asyncState);
         
         System.Collections.ObjectModel.ObservableCollection<Proyecto.ws.clExamen> EndgetExamenes(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/getExamen", ReplyAction="http://tempuri.org/wsCentroMedico/getExamenResponse")]
+        System.IAsyncResult BegingetExamen(decimal idExamen, System.AsyncCallback callback, object asyncState);
+        
+        Proyecto.ws.clExamen EndgetExamen(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/getItem", ReplyAction="http://tempuri.org/wsCentroMedico/getItemResponse")]
+        System.IAsyncResult BegingetItem(decimal idExamen, decimal idItem, System.AsyncCallback callback, object asyncState);
+        
+        Proyecto.ws.clItem EndgetItem(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/getItems", ReplyAction="http://tempuri.org/wsCentroMedico/getItemsResponse")]
         System.IAsyncResult BegingetItems(System.AsyncCallback callback, object asyncState);
@@ -962,6 +987,44 @@ namespace Proyecto.ws {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface wsCentroMedicoChannel : Proyecto.ws.wsCentroMedico, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class actualizarExamenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public actualizarExamenCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class actualizarItemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public actualizarItemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1061,6 +1124,25 @@ namespace Proyecto.ws {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class registrarItemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public registrarItemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class getIDCitasCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -1131,6 +1213,44 @@ namespace Proyecto.ws {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((System.Collections.ObjectModel.ObservableCollection<Proyecto.ws.clExamen>)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getExamenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getExamenCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Proyecto.ws.clExamen Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Proyecto.ws.clExamen)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getItemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getItemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Proyecto.ws.clItem Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Proyecto.ws.clItem)(this.results[0]));
             }
         }
     }
@@ -1291,6 +1411,18 @@ namespace Proyecto.ws {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class wsCentroMedicoClient : System.ServiceModel.ClientBase<Proyecto.ws.wsCentroMedico>, Proyecto.ws.wsCentroMedico {
         
+        private BeginOperationDelegate onBeginactualizarExamenDelegate;
+        
+        private EndOperationDelegate onEndactualizarExamenDelegate;
+        
+        private System.Threading.SendOrPostCallback onactualizarExamenCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginactualizarItemDelegate;
+        
+        private EndOperationDelegate onEndactualizarItemDelegate;
+        
+        private System.Threading.SendOrPostCallback onactualizarItemCompletedDelegate;
+        
         private BeginOperationDelegate onBegineliminarCitaDelegate;
         
         private EndOperationDelegate onEndeliminarCitaDelegate;
@@ -1321,6 +1453,12 @@ namespace Proyecto.ws {
         
         private System.Threading.SendOrPostCallback onregistrarExamenItemsCompletedDelegate;
         
+        private BeginOperationDelegate onBeginregistrarItemDelegate;
+        
+        private EndOperationDelegate onEndregistrarItemDelegate;
+        
+        private System.Threading.SendOrPostCallback onregistrarItemCompletedDelegate;
+        
         private BeginOperationDelegate onBegingetIDCitasDelegate;
         
         private EndOperationDelegate onEndgetIDCitasDelegate;
@@ -1344,6 +1482,18 @@ namespace Proyecto.ws {
         private EndOperationDelegate onEndgetExamenesDelegate;
         
         private System.Threading.SendOrPostCallback ongetExamenesCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetExamenDelegate;
+        
+        private EndOperationDelegate onEndgetExamenDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetExamenCompletedDelegate;
+        
+        private BeginOperationDelegate onBegingetItemDelegate;
+        
+        private EndOperationDelegate onEndgetItemDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetItemCompletedDelegate;
         
         private BeginOperationDelegate onBegingetItemsDelegate;
         
@@ -1446,6 +1596,10 @@ namespace Proyecto.ws {
             }
         }
         
+        public event System.EventHandler<actualizarExamenCompletedEventArgs> actualizarExamenCompleted;
+        
+        public event System.EventHandler<actualizarItemCompletedEventArgs> actualizarItemCompleted;
+        
         public event System.EventHandler<eliminarCitaCompletedEventArgs> eliminarCitaCompleted;
         
         public event System.EventHandler<eliminarExamenCompletedEventArgs> eliminarExamenCompleted;
@@ -1456,6 +1610,8 @@ namespace Proyecto.ws {
         
         public event System.EventHandler<registrarExamenItemsCompletedEventArgs> registrarExamenItemsCompleted;
         
+        public event System.EventHandler<registrarItemCompletedEventArgs> registrarItemCompleted;
+        
         public event System.EventHandler<getIDCitasCompletedEventArgs> getIDCitasCompleted;
         
         public event System.EventHandler<getIDExamenesCompletedEventArgs> getIDExamenesCompleted;
@@ -1463,6 +1619,10 @@ namespace Proyecto.ws {
         public event System.EventHandler<getIDItemsCompletedEventArgs> getIDItemsCompleted;
         
         public event System.EventHandler<getExamenesCompletedEventArgs> getExamenesCompleted;
+        
+        public event System.EventHandler<getExamenCompletedEventArgs> getExamenCompleted;
+        
+        public event System.EventHandler<getItemCompletedEventArgs> getItemCompleted;
         
         public event System.EventHandler<getItemsCompletedEventArgs> getItemsCompleted;
         
@@ -1483,6 +1643,98 @@ namespace Proyecto.ws {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> OpenCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BeginactualizarExamen(Proyecto.ws.clExamen examen, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginactualizarExamen(examen, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Proyecto.ws.wsCentroMedico.EndactualizarExamen(System.IAsyncResult result) {
+            return base.Channel.EndactualizarExamen(result);
+        }
+        
+        private System.IAsyncResult OnBeginactualizarExamen(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Proyecto.ws.clExamen examen = ((Proyecto.ws.clExamen)(inValues[0]));
+            return ((Proyecto.ws.wsCentroMedico)(this)).BeginactualizarExamen(examen, callback, asyncState);
+        }
+        
+        private object[] OnEndactualizarExamen(System.IAsyncResult result) {
+            bool retVal = ((Proyecto.ws.wsCentroMedico)(this)).EndactualizarExamen(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnactualizarExamenCompleted(object state) {
+            if ((this.actualizarExamenCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.actualizarExamenCompleted(this, new actualizarExamenCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void actualizarExamenAsync(Proyecto.ws.clExamen examen) {
+            this.actualizarExamenAsync(examen, null);
+        }
+        
+        public void actualizarExamenAsync(Proyecto.ws.clExamen examen, object userState) {
+            if ((this.onBeginactualizarExamenDelegate == null)) {
+                this.onBeginactualizarExamenDelegate = new BeginOperationDelegate(this.OnBeginactualizarExamen);
+            }
+            if ((this.onEndactualizarExamenDelegate == null)) {
+                this.onEndactualizarExamenDelegate = new EndOperationDelegate(this.OnEndactualizarExamen);
+            }
+            if ((this.onactualizarExamenCompletedDelegate == null)) {
+                this.onactualizarExamenCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnactualizarExamenCompleted);
+            }
+            base.InvokeAsync(this.onBeginactualizarExamenDelegate, new object[] {
+                        examen}, this.onEndactualizarExamenDelegate, this.onactualizarExamenCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BeginactualizarItem(Proyecto.ws.clItem item, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginactualizarItem(item, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Proyecto.ws.wsCentroMedico.EndactualizarItem(System.IAsyncResult result) {
+            return base.Channel.EndactualizarItem(result);
+        }
+        
+        private System.IAsyncResult OnBeginactualizarItem(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Proyecto.ws.clItem item = ((Proyecto.ws.clItem)(inValues[0]));
+            return ((Proyecto.ws.wsCentroMedico)(this)).BeginactualizarItem(item, callback, asyncState);
+        }
+        
+        private object[] OnEndactualizarItem(System.IAsyncResult result) {
+            bool retVal = ((Proyecto.ws.wsCentroMedico)(this)).EndactualizarItem(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnactualizarItemCompleted(object state) {
+            if ((this.actualizarItemCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.actualizarItemCompleted(this, new actualizarItemCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void actualizarItemAsync(Proyecto.ws.clItem item) {
+            this.actualizarItemAsync(item, null);
+        }
+        
+        public void actualizarItemAsync(Proyecto.ws.clItem item, object userState) {
+            if ((this.onBeginactualizarItemDelegate == null)) {
+                this.onBeginactualizarItemDelegate = new BeginOperationDelegate(this.OnBeginactualizarItem);
+            }
+            if ((this.onEndactualizarItemDelegate == null)) {
+                this.onEndactualizarItemDelegate = new EndOperationDelegate(this.OnEndactualizarItem);
+            }
+            if ((this.onactualizarItemCompletedDelegate == null)) {
+                this.onactualizarItemCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnactualizarItemCompleted);
+            }
+            base.InvokeAsync(this.onBeginactualizarItemDelegate, new object[] {
+                        item}, this.onEndactualizarItemDelegate, this.onactualizarItemCompletedDelegate, userState);
+        }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult Proyecto.ws.wsCentroMedico.BegineliminarCita(decimal IDCita, System.AsyncCallback callback, object asyncState) {
@@ -1719,6 +1971,52 @@ namespace Proyecto.ws {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BeginregistrarItem(Proyecto.ws.clItem item, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginregistrarItem(item, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        bool Proyecto.ws.wsCentroMedico.EndregistrarItem(System.IAsyncResult result) {
+            return base.Channel.EndregistrarItem(result);
+        }
+        
+        private System.IAsyncResult OnBeginregistrarItem(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Proyecto.ws.clItem item = ((Proyecto.ws.clItem)(inValues[0]));
+            return ((Proyecto.ws.wsCentroMedico)(this)).BeginregistrarItem(item, callback, asyncState);
+        }
+        
+        private object[] OnEndregistrarItem(System.IAsyncResult result) {
+            bool retVal = ((Proyecto.ws.wsCentroMedico)(this)).EndregistrarItem(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnregistrarItemCompleted(object state) {
+            if ((this.registrarItemCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.registrarItemCompleted(this, new registrarItemCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void registrarItemAsync(Proyecto.ws.clItem item) {
+            this.registrarItemAsync(item, null);
+        }
+        
+        public void registrarItemAsync(Proyecto.ws.clItem item, object userState) {
+            if ((this.onBeginregistrarItemDelegate == null)) {
+                this.onBeginregistrarItemDelegate = new BeginOperationDelegate(this.OnBeginregistrarItem);
+            }
+            if ((this.onEndregistrarItemDelegate == null)) {
+                this.onEndregistrarItemDelegate = new EndOperationDelegate(this.OnEndregistrarItem);
+            }
+            if ((this.onregistrarItemCompletedDelegate == null)) {
+                this.onregistrarItemCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnregistrarItemCompleted);
+            }
+            base.InvokeAsync(this.onBeginregistrarItemDelegate, new object[] {
+                        item}, this.onEndregistrarItemDelegate, this.onregistrarItemCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult Proyecto.ws.wsCentroMedico.BegingetIDCitas(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BegingetIDCitas(callback, asyncState);
         }
@@ -1894,6 +2192,100 @@ namespace Proyecto.ws {
                 this.ongetExamenesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetExamenesCompleted);
             }
             base.InvokeAsync(this.onBegingetExamenesDelegate, null, this.onEndgetExamenesDelegate, this.ongetExamenesCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BegingetExamen(decimal idExamen, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetExamen(idExamen, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ws.clExamen Proyecto.ws.wsCentroMedico.EndgetExamen(System.IAsyncResult result) {
+            return base.Channel.EndgetExamen(result);
+        }
+        
+        private System.IAsyncResult OnBegingetExamen(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            decimal idExamen = ((decimal)(inValues[0]));
+            return ((Proyecto.ws.wsCentroMedico)(this)).BegingetExamen(idExamen, callback, asyncState);
+        }
+        
+        private object[] OnEndgetExamen(System.IAsyncResult result) {
+            Proyecto.ws.clExamen retVal = ((Proyecto.ws.wsCentroMedico)(this)).EndgetExamen(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetExamenCompleted(object state) {
+            if ((this.getExamenCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getExamenCompleted(this, new getExamenCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getExamenAsync(decimal idExamen) {
+            this.getExamenAsync(idExamen, null);
+        }
+        
+        public void getExamenAsync(decimal idExamen, object userState) {
+            if ((this.onBegingetExamenDelegate == null)) {
+                this.onBegingetExamenDelegate = new BeginOperationDelegate(this.OnBegingetExamen);
+            }
+            if ((this.onEndgetExamenDelegate == null)) {
+                this.onEndgetExamenDelegate = new EndOperationDelegate(this.OnEndgetExamen);
+            }
+            if ((this.ongetExamenCompletedDelegate == null)) {
+                this.ongetExamenCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetExamenCompleted);
+            }
+            base.InvokeAsync(this.onBegingetExamenDelegate, new object[] {
+                        idExamen}, this.onEndgetExamenDelegate, this.ongetExamenCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BegingetItem(decimal idExamen, decimal idItem, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetItem(idExamen, idItem, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ws.clItem Proyecto.ws.wsCentroMedico.EndgetItem(System.IAsyncResult result) {
+            return base.Channel.EndgetItem(result);
+        }
+        
+        private System.IAsyncResult OnBegingetItem(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            decimal idExamen = ((decimal)(inValues[0]));
+            decimal idItem = ((decimal)(inValues[1]));
+            return ((Proyecto.ws.wsCentroMedico)(this)).BegingetItem(idExamen, idItem, callback, asyncState);
+        }
+        
+        private object[] OnEndgetItem(System.IAsyncResult result) {
+            Proyecto.ws.clItem retVal = ((Proyecto.ws.wsCentroMedico)(this)).EndgetItem(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetItemCompleted(object state) {
+            if ((this.getItemCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getItemCompleted(this, new getItemCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getItemAsync(decimal idExamen, decimal idItem) {
+            this.getItemAsync(idExamen, idItem, null);
+        }
+        
+        public void getItemAsync(decimal idExamen, decimal idItem, object userState) {
+            if ((this.onBegingetItemDelegate == null)) {
+                this.onBegingetItemDelegate = new BeginOperationDelegate(this.OnBegingetItem);
+            }
+            if ((this.onEndgetItemDelegate == null)) {
+                this.onEndgetItemDelegate = new EndOperationDelegate(this.OnEndgetItem);
+            }
+            if ((this.ongetItemCompletedDelegate == null)) {
+                this.ongetItemCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetItemCompleted);
+            }
+            base.InvokeAsync(this.onBegingetItemDelegate, new object[] {
+                        idExamen,
+                        idItem}, this.onEndgetItemDelegate, this.ongetItemCompletedDelegate, userState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2340,6 +2732,32 @@ namespace Proyecto.ws {
                     base(client) {
             }
             
+            public System.IAsyncResult BeginactualizarExamen(Proyecto.ws.clExamen examen, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = examen;
+                System.IAsyncResult _result = base.BeginInvoke("actualizarExamen", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndactualizarExamen(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("actualizarExamen", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BeginactualizarItem(Proyecto.ws.clItem item, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = item;
+                System.IAsyncResult _result = base.BeginInvoke("actualizarItem", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndactualizarItem(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("actualizarItem", _args, result)));
+                return _result;
+            }
+            
             public System.IAsyncResult BegineliminarCita(decimal IDCita, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = IDCita;
@@ -2407,6 +2825,19 @@ namespace Proyecto.ws {
                 return _result;
             }
             
+            public System.IAsyncResult BeginregistrarItem(Proyecto.ws.clItem item, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = item;
+                System.IAsyncResult _result = base.BeginInvoke("registrarItem", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public bool EndregistrarItem(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                bool _result = ((bool)(base.EndInvoke("registrarItem", _args, result)));
+                return _result;
+            }
+            
             public System.IAsyncResult BegingetIDCitas(System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[0];
                 System.IAsyncResult _result = base.BeginInvoke("getIDCitas", _args, callback, asyncState);
@@ -2453,6 +2884,33 @@ namespace Proyecto.ws {
             public System.Collections.ObjectModel.ObservableCollection<Proyecto.ws.clExamen> EndgetExamenes(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 System.Collections.ObjectModel.ObservableCollection<Proyecto.ws.clExamen> _result = ((System.Collections.ObjectModel.ObservableCollection<Proyecto.ws.clExamen>)(base.EndInvoke("getExamenes", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BegingetExamen(decimal idExamen, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = idExamen;
+                System.IAsyncResult _result = base.BeginInvoke("getExamen", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public Proyecto.ws.clExamen EndgetExamen(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                Proyecto.ws.clExamen _result = ((Proyecto.ws.clExamen)(base.EndInvoke("getExamen", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BegingetItem(decimal idExamen, decimal idItem, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[2];
+                _args[0] = idExamen;
+                _args[1] = idItem;
+                System.IAsyncResult _result = base.BeginInvoke("getItem", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public Proyecto.ws.clItem EndgetItem(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                Proyecto.ws.clItem _result = ((Proyecto.ws.clItem)(base.EndInvoke("getItem", _args, result)));
                 return _result;
             }
             

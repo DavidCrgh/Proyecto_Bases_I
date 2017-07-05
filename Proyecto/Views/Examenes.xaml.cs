@@ -41,6 +41,11 @@ namespace Proyecto.Views
             servicio.eliminarExamenCompleted += new EventHandler<ws.eliminarExamenCompletedEventArgs>(eliminarExamen);
             servicio.eliminarItemCompleted += new EventHandler<ws.eliminarItemCompletedEventArgs>(eliminarItem);
             servicio.registrarExamenItemsCompleted += new EventHandler<ws.registrarExamenItemsCompletedEventArgs>(registrarExamen);
+            servicio.registrarItemCompleted += new EventHandler<ws.registrarItemCompletedEventArgs>(registrarItem);
+            servicio.getExamenCompleted += new EventHandler<ws.getExamenCompletedEventArgs>(cargarExamen);
+            servicio.getItemCompleted += new EventHandler<ws.getItemCompletedEventArgs>(cargarItem);
+            servicio.actualizarExamenCompleted += new EventHandler<ws.actualizarExamenCompletedEventArgs>(examenActualizado);
+            servicio.actualizarItemCompleted += new EventHandler<ws.actualizarItemCompletedEventArgs>(itemActualizado);
         }
 
         // Executes when the user navigates to this page.
@@ -49,8 +54,30 @@ namespace Proyecto.Views
 
         }
 
+        public void examenActualizado(object sender, ws.actualizarExamenCompletedEventArgs e)
+        {
+            servicio.getExamenesAsync();
+            servicio.getItemsAsync();
+            servicio.getIDExamenesAsync();
+        }
+
+        public void itemActualizado(object sender, ws.actualizarItemCompletedEventArgs e)
+        {
+            servicio.getExamenesAsync();
+            servicio.getItemsAsync();
+            servicio.getIDExamenesAsync();
+        }
+
         //Evento lanzado al finalizar registrarExamenItemAsync()
         public void registrarExamen(object sender, ws.registrarExamenItemsCompletedEventArgs e)
+        {
+            servicio.getExamenesAsync();
+            servicio.getItemsAsync();
+            servicio.getIDExamenesAsync();
+        }
+
+        //Evento lanzado al finalizar registrarItemAsync()
+        public void registrarItem(object sender, ws.registrarItemCompletedEventArgs e)
         {
             servicio.getExamenesAsync();
             servicio.getItemsAsync();
@@ -119,7 +146,25 @@ namespace Proyecto.Views
             DG_Items.ItemsSource = e.Result;
         }
 
-        //Se acciona cuando el usuario cambia el elemento seleccionado del ComboBox de sedes
+        //Se acciona cuando el usuario cambia el elemento seleccionado del ComboBox de examenes
+        public void CB_ID_UpdateItem_ItemChanged(object sender, EventArgs e)
+        {
+            if(CB_ID_UpdateItem.SelectedIndex != -1)
+            {
+                decimal IDItem = IDItems[CB_ID_UpdateItem.SelectedIndex];
+                decimal IDExamen = IDExamenes[CB_ID_UpdateExamen.SelectedIndex];
+                servicio.getItemAsync(IDExamen, IDItem);
+            }
+        }
+
+        public void cargarExamen(object sender, ws.getExamenCompletedEventArgs e)
+        {
+            ws.clExamen tmpExamen = e.Result;
+            TB_NombreExamen.Text = tmpExamen.Nombre;
+            TB_Descripcion.Text = tmpExamen.Descripcion;
+        }
+
+        //Se acciona cuando el usuario cambia el elemento seleccionado del ComboBox de items
         public void CB_ID_UpdateExamen_ItemChanged(object sender, EventArgs e)
         {
             if (IDExamenes.Count > 0)
@@ -128,12 +173,22 @@ namespace Proyecto.Views
                 {
                     decimal idActual = IDExamenes[CB_ID_UpdateExamen.SelectedIndex];
                     servicio.getIDItemsAsync(Convert.ToInt32(idActual));
+                    servicio.getExamenAsync(idActual);
+                    TB_NombreItem.Text = "";
+                    TB_ExpresionRegular.Text = "";
                 }
                 catch
                 {
 
                 }
             }
+        }
+
+        public void cargarItem(object sender, ws.getItemCompletedEventArgs e)
+        {
+            ws.clItem tmpItem = e.Result;
+            TB_NombreItem.Text = tmpItem.Nombre;
+            TB_ExpresionRegular.Text = tmpItem.ExpresionRegular;
         }
 
         private void BN_BorrarExamen_Click(object sender, RoutedEventArgs e)
@@ -186,6 +241,14 @@ namespace Proyecto.Views
                 modoCreacion = false;
                 BN_Cancelar_Insercion.Visibility = Visibility.Collapsed;
                 BN_InsertarExamen.Content = "Insertar nuevo examen";
+                BN_ActualizarExamen.IsEnabled = true;
+                BN_BorrarExamen.IsEnabled = true;
+                BN_ActualizarItem.IsEnabled = true;
+                BN_BorrarItem.IsEnabled = true;
+                CB_ID_UpdateExamen.IsEnabled = true;
+                CB_ID_UpdateItem.IsEnabled = true;
+                TB_NombreExamen.IsEnabled = true;
+                TB_Descripcion.IsEnabled = true;
 
 
                 return;
@@ -194,6 +257,16 @@ namespace Proyecto.Views
             modoCreacion = true;
             BN_Cancelar_Insercion.Visibility = Visibility.Visible;
             BN_InsertarExamen.Content = "Aceptar";
+            
+
+            BN_ActualizarExamen.IsEnabled = false;
+            BN_BorrarExamen.IsEnabled = false;
+            BN_ActualizarItem.IsEnabled = false;
+            BN_BorrarItem.IsEnabled = false;
+            CB_ID_UpdateExamen.IsEnabled = false;
+            CB_ID_UpdateItem.IsEnabled = false;
+            TB_NombreExamen.IsEnabled = false;
+            TB_Descripcion.IsEnabled = false;
 
             ExamenPorInsertar = new ws.clExamen();
             ExamenPorInsertar.IDExamen = IDExamenes.Last() + 1;
@@ -207,6 +280,14 @@ namespace Proyecto.Views
             modoCreacion = false;
             BN_Cancelar_Insercion.Visibility = Visibility.Collapsed;
             BN_InsertarExamen.Content = "Insertar nuevo examen";
+            BN_ActualizarExamen.IsEnabled = true;
+            BN_BorrarExamen.IsEnabled = true;
+            BN_ActualizarItem.IsEnabled = true;
+            BN_BorrarItem.IsEnabled = true;
+            CB_ID_UpdateExamen.IsEnabled = true;
+            CB_ID_UpdateItem.IsEnabled = true;
+            TB_NombreExamen.IsEnabled = true;
+            TB_Descripcion.IsEnabled = true;
         }
 
         private void BN_InsertarItem_Click(object sender, RoutedEventArgs e)
@@ -231,7 +312,52 @@ namespace Proyecto.Views
                 return;
             }
             //Para insertar un item de un examen ya existente
+            ws.clItem tmpItem = new ws.clItem();
+            decimal IDExamen = IDExamenes[CB_ID_UpdateExamen.SelectedIndex];
+            tmpItem.IDExamen = IDExamen;
+            if(IDItems.Count > 0)
+            {
+                tmpItem.IDItem = IDItems.Last() + 1;
+            }
+            else
+            {
+                tmpItem.IDItem = 1;
+            }
+            tmpItem.Nombre = TB_NombreItem.Text + " ";
+            tmpItem.ExpresionRegular = TB_ExpresionRegular.Text + " ";
+            servicio.registrarItemAsync(tmpItem);
+        }
 
+        private void BN_ActualizarExamen_Click(object sender, RoutedEventArgs e)
+        {
+            ws.clExamen tmpExamen = new ws.clExamen();
+            tmpExamen.IDExamen = IDExamenes[CB_ID_UpdateExamen.SelectedIndex];
+            tmpExamen.Nombre = TB_NombreExamen.Text;
+            tmpExamen.Descripcion = TB_Descripcion.Text;
+            try
+            {
+                servicio.actualizarExamenAsync(tmpExamen);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void BN_ActualizarItem_Click(object sender, RoutedEventArgs e)
+        {
+            ws.clItem tmpItem = new ws.clItem();
+            tmpItem.IDExamen = IDExamenes[CB_ID_UpdateExamen.SelectedIndex];
+            tmpItem.IDItem = IDItems[CB_ID_UpdateItem.SelectedIndex];
+            tmpItem.Nombre = TB_NombreItem.Text;
+            tmpItem.ExpresionRegular = TB_ExpresionRegular.Text;
+            try
+            {
+                servicio.actualizarItemAsync(tmpItem);
+            } catch
+            {
+
+            }
         }
     }
 }

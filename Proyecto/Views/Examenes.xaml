@@ -50,7 +50,7 @@
             <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
                 <Button x:Name="BN_InsertarExamen" Content="Insertar nuevo examen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_InsertarExamen_Click" />
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
-                <Button x:Name="BN_ActualizarExamen" Content="Actualizar examen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25"/>
+                <Button x:Name="BN_ActualizarExamen" Content="Actualizar examen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_ActualizarExamen_Click"/>
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
                 <Button x:Name="BN_BorrarExamen" Content="Borrar examen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_BorrarExamen_Click" />
             </StackPanel>
@@ -70,14 +70,14 @@
             <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
                 <Button x:Name="BN_InsertarItem" Content="Insertar nuevo item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_InsertarItem_Click"/>
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
-                <Button x:Name="BN_ActualizarItem" Content="Actualizar item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25"/>
+                <Button x:Name="BN_ActualizarItem" Content="Actualizar item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_ActualizarItem_Click"/>
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
                 <Button x:Name="BN_BorrarItem" Content="Borrar item" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_BorrarItem_Click" />
             </StackPanel>
             <Rectangle Style="{StaticResource DividerStyle}" Margin="5,5"/>
             <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,17.5"/>
-                <ComboBox x:Name="CB_ID_UpdateItem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" RenderTransformOrigin="0.557,2.427" />
+                <ComboBox x:Name="CB_ID_UpdateItem" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" SelectionChanged="CB_ID_UpdateItem_ItemChanged" RenderTransformOrigin="0.557,2.427" />
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
             </StackPanel>
 
