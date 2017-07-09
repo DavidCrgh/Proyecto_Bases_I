@@ -56,14 +56,14 @@
             <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
                 <Button x:Name="BN_Insertar" Content="Insertar nueva cita" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_Insertar_Click"/>
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
-                <Button x:Name="BN_Actualizar" Content="Actualizar cita" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_Actualizar_Click"/>
+                <Button x:Name="BN_Actualizar" Content="Actualizar cita" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_Actualizar_Click" Visibility="Collapsed"/>
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
                 <Button x:Name="BN_Borrar" Content="Borrar cita" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Click="BN_Borrar_Click"/>
             </StackPanel>
             <Rectangle Style="{StaticResource DividerStyle}" Margin="5,5"/>
             <StackPanel HorizontalAlignment="Left" Height="95" VerticalAlignment="Top" Width="170">
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,17.5"/>
-                <ComboBox x:Name="CB_ID_Update" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
+                <ComboBox x:Name="CB_ID_Update" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" Visibility="Collapsed"/>
                 <Rectangle Style="{StaticResource DividerStyle}" Margin="0,5"/>
                 <ComboBox x:Name="CB_ID_Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="25" />
             </StackPanel>

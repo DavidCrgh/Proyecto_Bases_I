@@ -152,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\ws\Proyecto.ws.clCita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ws\Proyecto.ws.clCitaForUser.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

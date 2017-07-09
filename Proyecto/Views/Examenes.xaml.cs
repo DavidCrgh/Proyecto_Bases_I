@@ -149,7 +149,7 @@ namespace Proyecto.Views
         //Se acciona cuando el usuario cambia el elemento seleccionado del ComboBox de examenes
         public void CB_ID_UpdateItem_ItemChanged(object sender, EventArgs e)
         {
-            if(CB_ID_UpdateItem.SelectedIndex != -1)
+            if(CB_ID_UpdateItem.SelectedIndex != -1 && CB_ID_UpdateExamen.SelectedIndex != -1)
             {
                 decimal IDItem = IDItems[CB_ID_UpdateItem.SelectedIndex];
                 decimal IDExamen = IDExamenes[CB_ID_UpdateExamen.SelectedIndex];

@@ -226,6 +226,28 @@ namespace Proyecto.Web
             return tempItem;
         }
 
+        //Se obtiene una sola cita dad
+        [OperationContract]
+        public clCita getCita(decimal idCita)
+        {
+            var dataBase = new dcCentroMedico();
+            var vExamen = dataBase.obtenerCita(idCita).First();
+            clCita tempCita = new clCita(
+                vExamen.IDCITA, 
+                vExamen.SEDE, 
+                vExamen.MEDICO, 
+                vExamen.ESPECIALIDAD, 
+                vExamen.CEDULAPACIENTE, 
+                vExamen.DIACITA + "", 
+                vExamen.HORACITA, 
+                vExamen.FECHACITA, 
+                vExamen.OBSERVACIONES, 
+                vExamen.ESTADO + "", 
+                vExamen.IDFACTURA
+                );
+            return tempCita;
+        }
+
         //Obtengo los items
         [OperationContract]
         public ObservableCollection<clItem> getItems()

@@ -92,6 +92,12 @@
   <wsdl:message name="wsCentroMedico_getItem_OutputMessage">
     <wsdl:part name="parameters" element="tns:getItemResponse" />
   </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getCita_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCita" />
+  </wsdl:message>
+  <wsdl:message name="wsCentroMedico_getCita_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCitaResponse" />
+  </wsdl:message>
   <wsdl:message name="wsCentroMedico_getItems_InputMessage">
     <wsdl:part name="parameters" element="tns:getItems" />
   </wsdl:message>
@@ -196,6 +202,10 @@
     <wsdl:operation name="getItem">
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getItem" message="tns:wsCentroMedico_getItem_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getItemResponse" message="tns:wsCentroMedico_getItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCita">
+      <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getCita" message="tns:wsCentroMedico_getCita_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/wsCentroMedico/getCitaResponse" message="tns:wsCentroMedico_getCita_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="getItems">
       <wsdl:input wsaw:Action="http://tempuri.org/wsCentroMedico/getItems" message="tns:wsCentroMedico_getItems_InputMessage" />

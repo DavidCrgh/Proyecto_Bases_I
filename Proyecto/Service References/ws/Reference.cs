@@ -944,6 +944,11 @@ namespace Proyecto.ws {
         
         Proyecto.ws.clItem EndgetItem(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/getCita", ReplyAction="http://tempuri.org/wsCentroMedico/getCitaResponse")]
+        System.IAsyncResult BegingetCita(decimal idCita, System.AsyncCallback callback, object asyncState);
+        
+        Proyecto.ws.clCita EndgetCita(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/wsCentroMedico/getItems", ReplyAction="http://tempuri.org/wsCentroMedico/getItemsResponse")]
         System.IAsyncResult BegingetItems(System.AsyncCallback callback, object asyncState);
         
@@ -1257,6 +1262,25 @@ namespace Proyecto.ws {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class getCitaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public getCitaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Proyecto.ws.clCita Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Proyecto.ws.clCita)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class getItemsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -1495,6 +1519,12 @@ namespace Proyecto.ws {
         
         private System.Threading.SendOrPostCallback ongetItemCompletedDelegate;
         
+        private BeginOperationDelegate onBegingetCitaDelegate;
+        
+        private EndOperationDelegate onEndgetCitaDelegate;
+        
+        private System.Threading.SendOrPostCallback ongetCitaCompletedDelegate;
+        
         private BeginOperationDelegate onBegingetItemsDelegate;
         
         private EndOperationDelegate onEndgetItemsDelegate;
@@ -1623,6 +1653,8 @@ namespace Proyecto.ws {
         public event System.EventHandler<getExamenCompletedEventArgs> getExamenCompleted;
         
         public event System.EventHandler<getItemCompletedEventArgs> getItemCompleted;
+        
+        public event System.EventHandler<getCitaCompletedEventArgs> getCitaCompleted;
         
         public event System.EventHandler<getItemsCompletedEventArgs> getItemsCompleted;
         
@@ -2289,6 +2321,52 @@ namespace Proyecto.ws {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.IAsyncResult Proyecto.ws.wsCentroMedico.BegingetCita(decimal idCita, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BegingetCita(idCita, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Proyecto.ws.clCita Proyecto.ws.wsCentroMedico.EndgetCita(System.IAsyncResult result) {
+            return base.Channel.EndgetCita(result);
+        }
+        
+        private System.IAsyncResult OnBegingetCita(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            decimal idCita = ((decimal)(inValues[0]));
+            return ((Proyecto.ws.wsCentroMedico)(this)).BegingetCita(idCita, callback, asyncState);
+        }
+        
+        private object[] OnEndgetCita(System.IAsyncResult result) {
+            Proyecto.ws.clCita retVal = ((Proyecto.ws.wsCentroMedico)(this)).EndgetCita(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OngetCitaCompleted(object state) {
+            if ((this.getCitaCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.getCitaCompleted(this, new getCitaCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void getCitaAsync(decimal idCita) {
+            this.getCitaAsync(idCita, null);
+        }
+        
+        public void getCitaAsync(decimal idCita, object userState) {
+            if ((this.onBegingetCitaDelegate == null)) {
+                this.onBegingetCitaDelegate = new BeginOperationDelegate(this.OnBegingetCita);
+            }
+            if ((this.onEndgetCitaDelegate == null)) {
+                this.onEndgetCitaDelegate = new EndOperationDelegate(this.OnEndgetCita);
+            }
+            if ((this.ongetCitaCompletedDelegate == null)) {
+                this.ongetCitaCompletedDelegate = new System.Threading.SendOrPostCallback(this.OngetCitaCompleted);
+            }
+            base.InvokeAsync(this.onBegingetCitaDelegate, new object[] {
+                        idCita}, this.onEndgetCitaDelegate, this.ongetCitaCompletedDelegate, userState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.IAsyncResult Proyecto.ws.wsCentroMedico.BegingetItems(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BegingetItems(callback, asyncState);
         }
@@ -2911,6 +2989,19 @@ namespace Proyecto.ws {
             public Proyecto.ws.clItem EndgetItem(System.IAsyncResult result) {
                 object[] _args = new object[0];
                 Proyecto.ws.clItem _result = ((Proyecto.ws.clItem)(base.EndInvoke("getItem", _args, result)));
+                return _result;
+            }
+            
+            public System.IAsyncResult BegingetCita(decimal idCita, System.AsyncCallback callback, object asyncState) {
+                object[] _args = new object[1];
+                _args[0] = idCita;
+                System.IAsyncResult _result = base.BeginInvoke("getCita", _args, callback, asyncState);
+                return _result;
+            }
+            
+            public Proyecto.ws.clCita EndgetCita(System.IAsyncResult result) {
+                object[] _args = new object[0];
+                Proyecto.ws.clCita _result = ((Proyecto.ws.clCita)(base.EndInvoke("getCita", _args, result)));
                 return _result;
             }
             

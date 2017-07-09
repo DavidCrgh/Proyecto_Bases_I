@@ -225,6 +225,5 @@ namespace Proyecto.Views
             }
             CB_Tipo.SelectedIndex = 0;
         }
-
     }
 }

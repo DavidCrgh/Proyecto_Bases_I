@@ -702,6 +702,13 @@ namespace cnCentroMedico
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idExamen, nombre, desc);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="CITA.obtenerCita")]
+		public ISingleResult<enCentroMedico.obtenerCitaResult> obtenerCita([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Decimal(20,0)")] System.Nullable<decimal> idCita)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idCita);
+			return ((ISingleResult<enCentroMedico.obtenerCitaResult>)(result.ReturnValue));
+		}
 	}
 }
 namespace enCentroMedico
@@ -11135,6 +11142,212 @@ namespace enCentroMedico
 				if ((this._ExpresionRegular != value))
 				{
 					this._ExpresionRegular = value;
+				}
+			}
+		}
+	}
+	
+	public partial class obtenerCitaResult
+	{
+		
+		private decimal _IDCITA;
+		
+		private decimal _SEDE;
+		
+		private decimal _MEDICO;
+		
+		private decimal _ESPECIALIDAD;
+		
+		private string _CEDULAPACIENTE;
+		
+		private char _DIACITA;
+		
+		private decimal _HORACITA;
+		
+		private System.DateTime _FECHACITA;
+		
+		private string _OBSERVACIONES;
+		
+		private char _ESTADO;
+		
+		private System.Nullable<decimal> _IDFACTURA;
+		
+		public obtenerCitaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDCITA", DbType="Decimal(20,0) NOT NULL")]
+		public decimal IDCITA
+		{
+			get
+			{
+				return this._IDCITA;
+			}
+			set
+			{
+				if ((this._IDCITA != value))
+				{
+					this._IDCITA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SEDE", DbType="Decimal(4,0) NOT NULL")]
+		public decimal SEDE
+		{
+			get
+			{
+				return this._SEDE;
+			}
+			set
+			{
+				if ((this._SEDE != value))
+				{
+					this._SEDE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MEDICO", DbType="Decimal(9,0) NOT NULL")]
+		public decimal MEDICO
+		{
+			get
+			{
+				return this._MEDICO;
+			}
+			set
+			{
+				if ((this._MEDICO != value))
+				{
+					this._MEDICO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESPECIALIDAD", DbType="Decimal(9,0) NOT NULL")]
+		public decimal ESPECIALIDAD
+		{
+			get
+			{
+				return this._ESPECIALIDAD;
+			}
+			set
+			{
+				if ((this._ESPECIALIDAD != value))
+				{
+					this._ESPECIALIDAD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEDULAPACIENTE", DbType="VarChar(12) NOT NULL", CanBeNull=false)]
+		public string CEDULAPACIENTE
+		{
+			get
+			{
+				return this._CEDULAPACIENTE;
+			}
+			set
+			{
+				if ((this._CEDULAPACIENTE != value))
+				{
+					this._CEDULAPACIENTE = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACITA", DbType="Char(1) NOT NULL")]
+		public char DIACITA
+		{
+			get
+			{
+				return this._DIACITA;
+			}
+			set
+			{
+				if ((this._DIACITA != value))
+				{
+					this._DIACITA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HORACITA", DbType="Decimal(2,0) NOT NULL")]
+		public decimal HORACITA
+		{
+			get
+			{
+				return this._HORACITA;
+			}
+			set
+			{
+				if ((this._HORACITA != value))
+				{
+					this._HORACITA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FECHACITA", DbType="Date NOT NULL")]
+		public System.DateTime FECHACITA
+		{
+			get
+			{
+				return this._FECHACITA;
+			}
+			set
+			{
+				if ((this._FECHACITA != value))
+				{
+					this._FECHACITA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OBSERVACIONES", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string OBSERVACIONES
+		{
+			get
+			{
+				return this._OBSERVACIONES;
+			}
+			set
+			{
+				if ((this._OBSERVACIONES != value))
+				{
+					this._OBSERVACIONES = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ESTADO", DbType="Char(1) NOT NULL")]
+		public char ESTADO
+		{
+			get
+			{
+				return this._ESTADO;
+			}
+			set
+			{
+				if ((this._ESTADO != value))
+				{
+					this._ESTADO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDFACTURA", DbType="Decimal(20,0)")]
+		public System.Nullable<decimal> IDFACTURA
+		{
+			get
+			{
+				return this._IDFACTURA;
+			}
+			set
+			{
+				if ((this._IDFACTURA != value))
+				{
+					this._IDFACTURA = value;
 				}
 			}
 		}

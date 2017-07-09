@@ -672,4 +672,20 @@
     <Parameter Name="desc" Type="System.String" DbType="VarChar(60)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="CITA.obtenerCita" Method="obtenerCita">
+    <Parameter Name="idCita" Type="System.Decimal" DbType="Decimal(20,0)" />
+    <ElementType Name="obtenerCitaResult">
+      <Column Name="IDCITA" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SEDE" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="MEDICO" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ESPECIALIDAD" Type="System.Decimal" DbType="Decimal(9,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CEDULAPACIENTE" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DIACITA" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="HORACITA" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FECHACITA" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="OBSERVACIONES" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ESTADO" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="IDFACTURA" Type="System.Decimal" DbType="Decimal(20,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

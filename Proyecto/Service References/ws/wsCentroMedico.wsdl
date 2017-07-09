@@ -139,6 +139,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getCita">
+      <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/getCita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getItems">
       <soap12:operation soapAction="http://tempuri.org/wsCentroMedico/getItems" style="document" />
       <wsdl:input>
